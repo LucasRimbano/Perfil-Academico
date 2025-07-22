@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container">
+            <div class="form" id="form">
+                <form action="" id="sign-in">
+                    <h2>Login</h2>
+                    <p>Don't have an account yes? <a href="#" id="link-sign-in">Sign up</a></p>
+
+                    <div class="input-container">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email-login" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="input-container">
+                        <div class="forget">
+                            <label for="password">Password</label>
+                            <a href="#">Forget Password?</a>
+                        </div>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="remember-me">
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox">Remember me</label>
+                    </div>
+
+                    <button type="submit">LOGIN</button>
+
+                    <div class="line-width-text">
+                        <span>or login with</span>
+                    </div>
+
+                    <div class="other-login">
+                        <a href="#" class="google">
+                            <img src="/icons/google.svg" alt="">
+                            <span>Google</span>
+                        </a>
+                        <a href="#" class="facebook">
+                            <img src="/icons/facebook.svg" alt="">
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                </form>
+                <form action="" id="sign-up">
+                    <h2>Register</h2>
+                    <p>Already registered? <a href="#" id="link-sign-up" >Sign in</a></p>
+
+                    <div class="input-container">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="your name" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email-register" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <button type="submit">REGISTER</button>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="shape shape1"></div>
+            <div class="shape shape2"></div>
+            <div class="shape shape3"></div>
+            <section>
+            <h1>Welcome to <span>student portal</span></h1>
+            <p>login to access your account</p>
+            <img src="images/banner.svg" alt="error de imagen">
+        </section>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <div class="sign" id="btn-sign-in">
+                <img src="images/crown.svg" alt="imagen de ingresar ">
+                <span>Registrarse</span>
+            </div>
+            <div class="sign" id="btn-sign-up">
+                <img src="images/rule.svg" alt="imagen de entrar al perfil">
+                <span>Entra perfil</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
