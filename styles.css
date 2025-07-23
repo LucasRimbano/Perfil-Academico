@@ -190,92 +190,56 @@ form .btn-register {
     width: 1rem;
 }
 
-/*other login google*/
-.other-login .google {
-    border: 1px solid var(--color-icon-google);
-    color: var(--color-icon-google);
-    cursor: pointer;
-}
-
-/*other login facebook*/
-.other-login .facebook {
-    border: 1px solid var(--color-icon-facebook);
-    color: var(--color-icon-facebook);
-    cursor: pointer;
-}
-
-
 .banner {
     border: 2px solid rgba(0, 0, 0, 0);
-    height: 115%;
+    height: 110%;
     padding: 5rem 2rem 0 2rem;
     position: relative;
     overflow: hidden;
-    background-color: var(--color-primary);
+    background-image: url("images/unsambanner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*background-color: var(--color-primary); */
 }
 
 .banner h1 {
-    border: 2px solid solid rgba(255, 0, 0, 0);
+    border: 2px solid solid rgb(255, 0, 0);
     color: var(--color-title);
     font-size: 3rem;
     line-height: 0.9;
 }
 
 .banner h1 span {
-   border: 2px solid rgba(0, 0, 0, 0);
+   border: 2px solid rgba(255, 208, 0, 0);
    display: block;
+   color:var(--color-secondary);
    font-weight: 500;
 }
 
 .banner p {
-    border: 2px solid rgba(0, 0, 255, 0);
-    color: var(--color-background-form);
-    font-size: 0.8rem;
-    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.3); /* blanco traslúcido */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    backdrop-filter: blur(3px); /* efecto vidrio opcional */
+    -webkit-backdrop-filter: blur(3px); /* soporte Safari */
 }
 
 .banner img {
+    border: #4267B2;
     position: absolute;
     bottom: 2.5rem;
     right: -2rem;
     width: 95%;
 }
 
-
 .shape {
    background-color: #FFFFFF;
    border-radius: 55%;
-   opacity: 0.2;
+   opacity: 0.05;
    position: absolute;
 }
-
-.banner img {
-    position: absolute;
-    bottom: 2.5rem;
-    right: -2rem;
-    width: 95%;
-}
-
-
-.shape {
-   background-color: #FFFFFF;
-   border-radius: 55%;
-   opacity: 0.2;
-   position: absolute;
-}
-
-.foto-unsam {
-    width: 8px;
-    height: auto;
-    left: 0;
-    right: 0;
-    object-fit:cover;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-
-}
-
 
 .shape1{
     width: 12.5rem;
