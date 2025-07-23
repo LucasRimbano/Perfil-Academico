@@ -104,6 +104,20 @@ form p a {
     outline: none;
 }
 
+.input-container select {
+    padding: 0.7rem;
+    border: 2px solid var(--color-border);
+    border-radius: 0.4rem;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
+    color: var(--color-text-primary);
+    background-color: #fff;
+    width: 100%;
+    appearance: none; /* elimina estilo nativo */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
 .input-container label,
 .input-container a {
     font-size: 0.8rem;

@@ -15,6 +15,41 @@
     <div class="container" id="container">
         <div class="form-container">
             <div class="form" id="form">
+                <form action="" id="sign-up">
+                    <div class="perfil-Academico"><img src="images/unsampng.png" alt="foto de perfil" class="foto-unsam"></div>
+                    <h2>Registrar Perfil</h2>
+                
+                     <div class="input-container">
+                        <label for="name">Ingresar Nombre y Apellido🗣️</label>
+                        <input type="text" id="name" placeholder="Ingresar y Apellido" required>
+                     </div>
+                     <div class="input-container">
+                        <label for="dni">Ingresar DNI🪪</label>
+                        <input id="dni" name="dni" type="text" value="" placeholder="Ej: 01234">
+                    </div>
+                     <div class="input-container">
+                        <label for="email">Ingresar Email📧</label>
+                        <input type="email" id="email-register" placeholder="Ejemplo@gmail.com" required>
+                     </div>
+             
+                     <div class="input-container">
+                     <label for="carrera">Seleccionar tipo de carrera 🎓</label>
+                     <select id="carrera" required>
+                         <option value="" disabled selected>Elegí una carrera</option>
+                         <option value="Programacion Informatica">Programacion Informatica</option>
+                         <option value="Ingenieria">Ingeniería</option>
+                         <option value="Medicina">Medicina</option>
+                         <option value="Derecho">Derecho</option>
+                         <option value="Economia">Economía</option>
+                         <option value="Arquitectura">Arquitectura</option>
+                         <option value="Psicologia">Psicología</option>
+                         <option value="Diagnotico por Imagen">Diagnotico por Imagen</option>
+                         <option value="Redes Informatica">Redes Informatica</option>
+                     </select>
+                     </div>
+              
+                  <button type="submit">REGISTRAR PERFIL</button>
+                </form>
                 <form action="" id="sign-in">
                     <div class="perfil-Academico"><img src="images/unsampng.png" alt="foto de perfil" class="foto-unsam"></div>
                     
@@ -31,7 +66,7 @@
                     </div>
 
                     <div class="input-container">
-                        <label for="email">Ingresar Email📧</label>
+                        <label for="email">Email📧</label>
                         <input type="email" id="email-login" placeholder="Introducce tu correo electronico" required>
                     </div>
 
@@ -45,32 +80,6 @@
                     <div class="blanco">
                         <span></span>
                     </div>
-                </form>
-                <form action="" id="sign-up">
-                    <div class="perfil-Academico"><img src="images/unsampng.png" alt="foto de perfil" class="foto-unsam"></div>
-                    <h2>Perfil Registrado</h2>
-                
-                     <div class="input-container">
-                        <label for="name">Nombre y Apellido</label>
-                        <input type="text" id="name" placeholder="Ingresar y Apellido" required>
-                     </div>
-              
-                     <div class="input-container">
-                        <label for="email">Email </label>
-                        <input type="email" id="email-register" placeholder="Ejemplo@gmail.com" required>
-                     </div>
-             
-                     <div class="input-container">
-                        <label for="carrera">Tipo de carrera</label>
-                        <input type="text" id="carrera" placeholder="Ej: Ingeniería, Medicina..." required>
-                     </div>
-             
-                     <div class="remember-me">
-                        <input type="checkbox" id="checkbox-register">
-                        <label for="checkbox-register">Recordar usuario</label>
-                     </div>
-              
-                  <button type="submit">REGISTER</button>
                 </form>
             </div>
         </div>
@@ -88,12 +97,12 @@
 
         <div class="sidebar" id="sidebar">
             <div class="sign" id="btn-sign-in">
-                <img src="images/crown.svg" alt="imagen de ingresar ">
-                <span>Ingresar</span>
+                <img src="images/rule.svg" alt="imagen de ingresar ">
+                <span>Registrar</span>
             </div>
             <div class="sign" id="btn-sign-up">
-                <img src="images/rule.svg" alt="imagen de entrar al perfil">
-                <span>Registrar</span>
+                <img src="images/crown.svg" alt="imagen de entrar al perfil">
+                <span>Perfil</span>
             </div>
         </div>
     </div>
