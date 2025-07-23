@@ -249,6 +249,34 @@ form .btn-register {
    position: absolute;
 }
 
+.banner img {
+    position: absolute;
+    bottom: 2.5rem;
+    right: -2rem;
+    width: 95%;
+}
+
+
+.shape {
+   background-color: #FFFFFF;
+   border-radius: 55%;
+   opacity: 0.2;
+   position: absolute;
+}
+
+.foto-unsam {
+    width: 8px;
+    height: auto;
+    left: 0;
+    right: 0;
+    object-fit:cover;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+}
+
+
 .shape1{
     width: 12.5rem;
     height: 12.5rem;
