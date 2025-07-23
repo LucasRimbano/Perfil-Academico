@@ -9,9 +9,9 @@
 
 /* color variables */
 :root {
-   --color-primary: #925FE2;
-   --color-secondary: #6D4EA1;
-   --color-background: #D9C7F2;
+   --color-primary: #5fa3e2;
+   --color-secondary: #00e1ff;
+   --color-background: #868686;
    --color-background-form: #FFFFFF;
    --color-text-primary: #000000;
    --color-text-secondary: #656565;
@@ -22,8 +22,20 @@
    --color-title: #F7F3FA;
 }
 
+/*video fondo*/
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Para que quede detrás del contenido */
+}
+
 /* body */
 body {
+    background-image: url('images/fondo.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +50,7 @@ body {
     align-items: center;
     border: 2px solid rgba(0, 128, 0, 0);
     width: 57.25rem;
-    height: 31rem;
+    height: 33rem;
 }
 
 /* form-container */
@@ -54,7 +66,9 @@ body {
 }
 .form.active {
     transform: translatey(-50%);
+    display: block;
 }   
+
 
 form {
     border: 2px solid rgba(255, 0, 0, 0);
@@ -263,10 +277,11 @@ form .btn-register {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 120%;
     position: relative;
     user-select: none;
 }
-
+/*barra lateral izquierdo*/
 .sidebar::after {
     content: "";
     background-color: var(--color-primary);
@@ -278,7 +293,7 @@ form .btn-register {
     transition: top 0.5s ease;
 }
 
-.sidebar .active::after{
+.sidebar.active::after{
     top: 50%;
 }
 .sidebar .sign {

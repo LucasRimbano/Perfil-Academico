@@ -7,69 +7,69 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!--video fondo-->>
+    <video autoplay muted loop id="background-video">
+        <source src="images/fondo.mp4" type="video/mp4">
+    </video>
+
     <div class="container" id="container">
         <div class="form-container">
             <div class="form" id="form">
                 <form action="" id="sign-in">
-                    <h2>Login</h2>
-                    <p>Don't have an account yes? <a href="#" id="link-sign-in">Sign up</a></p>
+                    <h2>Perfil Academico</h2>
+                    <p> ¿No tenes perfil? <a href="#" id="link-sign-in">Registrarse</a></p>
 
                     <div class="input-container">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email-login" placeholder="Enter your email" required>
+                     <label for="name">Nombre y Apellido</label>
+                     <input type="text" id="name" placeholder="Ej: Juan Pérez" required>
                     </div>
 
                     <div class="input-container">
-                        <div class="forget">
-                            <label for="password">Password</label>
-                            <a href="#">Forget Password?</a>
-                        </div>
-                        <input type="password" id="password" placeholder="Enter your password" required>
+                        <label for="dni">DNI</label>
+                        <input type="number" id="dni" placeholder="Ej: 40123456" required>
                     </div>
 
-                    <div class="remember-me">
-                        <input type="checkbox" id="checkbox">
-                        <label for="checkbox">Remember me</label>
+                    <div class="input-container">
+                        <label for="email"> Ingresar Email</label>
+                        <input type="email" id="email-login" placeholder="Introducce tu correo electronico" required>
                     </div>
 
-                    <button type="submit">LOGIN</button>
+                     <div class="input-container">
+                       <label for="carrera">Tipo de carrera</label>
+                       <input type="text" id="carrera" placeholder="Ej: Ingeniería, Medicina..." required>
+                     </div>
 
-                    <div class="line-width-text">
-                        <span>or login with</span>
-                    </div>
+                    <button type="submit">INGRESAR</button>
 
-                    <div class="other-login">
-                        <a href="#" class="google">
-                            <img src="/icons/google.svg" alt="">
-                            <span>Google</span>
-                        </a>
-                        <a href="#" class="facebook">
-                            <img src="/icons/facebook.svg" alt="">
-                            <span>Facebook</span>
-                        </a>
+                    <div class="blanco">
+                        <span></span>
                     </div>
                 </form>
                 <form action="" id="sign-up">
-                    <h2>Register</h2>
+                    <h2>Perfil Registrado</h2>
                     <p>Already registered? <a href="#" id="link-sign-up" >Sign in</a></p>
-
-                    <div class="input-container">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="your name" required>
-                    </div>
-
-                    <div class="input-container">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email-register" placeholder="Enter your email" required>
-                    </div>
-
-                    <div class="input-container">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Enter your password" required>
-                    </div>
-
-                    <button type="submit">REGISTER</button>
-
+                
+                     <div class="input-container">
+                        <label for="name">Nombre y Apellido</label>
+                        <input type="text" id="name" placeholder="Ingresar y Apellido" required>
+                     </div>
+              
+                     <div class="input-container">
+                        <label for="email">Email </label>
+                        <input type="email" id="email-register" placeholder="Ejemplo@gmail.com" required>
+                     </div>
+             
+                     <div class="input-container">
+                        <label for="carrera">Tipo de carrera</label>
+                        <input type="text" id="carrera" placeholder="Ej: Ingeniería, Medicina..." required>
+                     </div>
+             
+                     <div class="remember-me">
+                        <input type="checkbox" id="checkbox-register">
+                        <label for="checkbox-register">Recordar usuario</label>
+                     </div>
+              
+                  <button type="submit">REGISTER</button>
                 </form>
             </div>
         </div>
@@ -79,8 +79,8 @@
             <div class="shape shape2"></div>
             <div class="shape shape3"></div>
             <section>
-            <h1>Welcome to <span>student portal</span></h1>
-            <p>login to access your account</p>
+            <h1>Bienvenidos al <span>portal de estudiantes</span></h1>
+            <p>Inicie sección para acceder a su cuenta</p>
             <img src="images/banner.svg" alt="error de imagen">
         </section>
         </div>
@@ -88,11 +88,11 @@
         <div class="sidebar" id="sidebar">
             <div class="sign" id="btn-sign-in">
                 <img src="images/crown.svg" alt="imagen de ingresar ">
-                <span>Registrarse</span>
+                <span>Ingresar</span>
             </div>
             <div class="sign" id="btn-sign-up">
                 <img src="images/rule.svg" alt="imagen de entrar al perfil">
-                <span>Entra perfil</span>
+                <span>Registrar</span>
             </div>
         </div>
     </div>
