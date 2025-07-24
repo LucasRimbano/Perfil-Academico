@@ -6,6 +6,7 @@ const sidebar = document.getElementById('sidebar');
 const signin = document.getElementById('sign-in');
 const signup = document.getElementById('sign-up');
 const container = document.getElementById('container');
+
 const LinkSignin = document.getElementById('link-sign-in');
 const LinkSignUp = document.getElementById('link-sign-up'); // solo si usás uno para volver
 
@@ -24,7 +25,7 @@ const perfilCarrera = document.getElementById('perfil-carrera');
 // Formulario de ingreso
 const formSignIn = document.getElementById('sign-in');
 
-// Eventos
+// Eventos (solo si existen los links)
 if (LinkSignUp) {
     LinkSignUp.addEventListener('click', () => {
         changeSignin();
@@ -72,8 +73,7 @@ function transition(parent) {
     setTimeout(() => {
         Array.from(children).forEach((child, index) => {
             child.style.animation = 'slidein 0.4s ease forwards';
-            let delay = index * 0.05 + 's';
-            child.style.animationDelay = delay;
+            child.style.animationDelay = (index * 0.05) + 's';
         });
     }, 300);
 }

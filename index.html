@@ -7,94 +7,81 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--video fondo-->>
+   <!--video fondo-->
     <video autoplay muted loop id="background-video">
-        <source src="images/fondo.mp4" type="video/mp4">
+       <source src="images/fondo.mp4" type="video/mp4">
     </video>
-
     <div class="container" id="container">
         <div class="form-container">
             <div class="form" id="form">
-                <form action="" id="sign-up">
-                    <div class="perfil-Academico"><img src="images/unsampng.png" alt="foto de perfil" class="foto-unsam"></div>
-                    <h2>Registrar Perfil</h2>
-                
-                     <div class="input-container">
-                        <label for="name">Ingresar Nombre y Apellido🗣️</label>
-                        <input type="text" id="name" placeholder="Ingresar y Apellido" required>
-                     </div>
-                     <div class="input-container">
-                        <label for="dni">Ingresar DNI🪪</label>
-                        <input id="dni" name="dni" type="text" value="" placeholder="Ej: 01234">
-                    </div>
-                     <div class="input-container">
-                        <label for="email">Ingresar Email📧</label>
-                        <input type="email" id="email-register" placeholder="Ejemplo@gmail.com" required>
-                     </div>
-             
-                     <div class="input-container">
-                     <label for="carrera">Seleccionar tipo de carrera 🎓</label>
-                     <select id="carrera" required>
-                         <option value="" disabled selected>Elegí una carrera</option>
-                         <option value="Programacion Informatica">Programacion Informatica</option>
-                         <option value="Ingenieria">Ingeniería</option>
-                         <option value="Medicina">Medicina</option>
-                         <option value="Derecho">Derecho</option>
-                         <option value="Economia">Economía</option>
-                         <option value="Arquitectura">Arquitectura</option>
-                         <option value="Psicologia">Psicología</option>
-                         <option value="Diagnotico por Imagen">Diagnotico por Imagen</option>
-                         <option value="Redes Informatica">Redes Informatica</option>
-                     </select>
-                     </div>
-              
-                  <button type="submit">REGISTRAR PERFIL</button>
-                </form>
-                <form action="" id="sign-in">
-                    <div class="perfil-Academico"><img src="images/unsampng.png" alt="foto de perfil" class="foto-unsam"></div>
-                    
-                    <h2>Perfil Academico</h2>
-
-                    <div class="input-container">
-                     <label for="name">Nombre y Apellido🗣️</label>
-                     <input type="text" id="name" placeholder="Ej: Juan Pérez" required>
-                    </div>
-
-                    <div class="input-container">
-                        <label for="dni">DNI🪪</label>
-                        <input id="dni" name="dni" type="text" value="" placeholder="Ej: 01234">
-                    </div>
-
-                    <div class="input-container">
-                        <label for="email">Email📧</label>
-                        <input type="email" id="email-login" placeholder="Introducce tu correo electronico" required>
-                    </div>
-
-                     <div class="input-container">
-                       <label for="carrera">Tipo de carrera🎓</label>
-                       <input type="text" id="carrera" placeholder="Ej: Ingeniería, Medicina..." required>
-                     </div>
-
-                    <button type="submit">INGRESAR</button>
-
-                    <div class="blanco">
-                        <span></span>
-                    </div>
+                    <form action="" id="sign-up">
+                        <div class="perfil-Academico"><img src="images/unsampng.png" alt="foto de perfil" class="foto-unsam"></div>
+                        <h2>Registrar Perfil</h2>
+                        <div class="input-container">
+                            <label for="name">Ingresar Nombre y Apellido🗣️</label>
+                            <input type="text" id="name" placeholder="Ingresar y Apellido" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="dni">Ingresar DNI🪪</label>
+                            <input id="dni" name="dni" type="text" value="" placeholder="Ej: 01234">
+                        </div>
+                        <div class="input-container">
+                            <label for="email">Ingresar Email📧</label>
+                            <input type="email" id="email-register" placeholder="Ejemplo@gmail.com" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="carrera">Seleccionar tipo de carrera 🎓</label>
+                            <select id="carrera" required>
+                                <option value="" disabled selected>Elegí una carrera</option>
+                                <option value="Programacion Informatica">Programacion Informatica</option>
+                                <option value="Ingenieria">Ingeniería</option>
+                                <option value="Medicina">Medicina</option>
+                                <option value="Derecho">Derecho</option>
+                                <option value="Economia">Economía</option>
+                                <option value="Arquitectura">Arquitectura</option>
+                                <option value="Psicologia">Psicología</option>
+                                <option value="Diagnotico por Imagen">Diagnotico por Imagen</option>
+                                <option value="Redes Informatica">Redes Informatica</option>
+                            </select>
+                        </div>
+                        <button type="submit">REGISTRAR PERFIL</button>
+                    </form>
+                    <form action="" id="sign-in">
+                        <div class="perfil-Academico"><img src="images/unsampng.png" alt="foto de perfil" class="foto-unsam"></div>
+                        <h2>Perfil Academico</h2>
+                        <div class="input-container">
+                            <label for="name">Nombre y Apellido🗣️</label>
+                            <input type="text" id="name" placeholder="Ej: Juan Pérez" required>
+                        </div>
+                        <div class="input-container">
+                           <label for="dni">DNI🪪</label>
+                           <input id="dni" name="dni" type="text" value="" placeholder="Ej: 01234">
+                        </div>
+                        <div class="input-container">
+                           <label for="email">Email📧</label>
+                           <input type="email" id="email-login" placeholder="Introducce tu correo electronico" required>
+                        </div>
+                        <div class="input-container">
+                          <label for="carrera">Tipo de carrera🎓</label>
+                          <input type="text" id="carrera" placeholder="Ej: Ingeniería, Medicina..." required>
+                        </div>
+                        <button type="submit">INGRESAR</button>
+                        <div class="blanco">
+                       <span></span>
+                   </div>
                 </form>
             </div>
         </div>
         <div class="banner">
-                 <div class="shape shape1"></div>
-                 <div class="shape shape2"></div>
-                 <div class="shape shape3"></div>
+                <div class="shape shape1"></div>
+                <div class="shape shape2"></div>
+                <div class="shape shape3"></div>
             <section>
-                 <h1>Bienvenidos al<span></span>  <span> <span></span> <span>Perfil Academico</span></h1>
-                 <p> Universidad Nacional de San Martín</p>
-                 <img src="" alt="">
-            
+                <h1>Bienvenidos al<span></span>  <span> <span></span> <span>Perfil Academico</span></h1>
+                <p> Universidad Nacional de San Martín</p>
+                <img src="" alt="">
             </section>
         </div>
-
         <div class="sidebar" id="sidebar">
             <div class="sign" id="btn-sign-in">
                 <img src="images/rule.svg" alt="imagen de ingresar ">
@@ -105,8 +92,12 @@
                 <span>Perfil</span>
             </div>
         </div>
+        <div>
+            <footer class="footer">
+                 <p>© Universidad Nacional de San Martín - 2025. Todos los derechos reservados. Desarrollado por Lucas Rimbano y Lucas Barcos.</p>
+            </footer>
+        </div>
     </div>
-
     <script src="/script.js"></script>
 </body>
 </html>

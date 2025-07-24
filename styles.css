@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,108..980;1,180..9888&display=swap");
 
-*{
+* {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -22,7 +22,7 @@
    --color-title: #F7F3FA;
 }
 
-/*video fondo*/
+/* video fondo */
 #background-video {
     position: fixed;
     right: 0;
@@ -30,7 +30,7 @@
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    z-index: -1; /* Para que quede detrás del contenido */
+    z-index: -1;
 }
 
 /* body */
@@ -43,67 +43,58 @@ body {
     height: 100vh;
     background-color: var(--color-background);
 }
+
 /* container */
 .container {
     display: grid;
     grid-template-columns: 4.2fr 5fr 0.8fr;
     align-items: center;
-    border: 2px solid rgba(0, 128, 0, 0);
-    width: 57.25rem;
+    width: 50.25rem;
     height: 33rem;
 }
 
 /* form-container */
 .form-container {
-    border: 2px solid rgba(0, 0, 255, 0);
     height: 100%;
     background-color: var(--color-background-form);
-    overflow: hidden;
+    overflow: hidden; /*oculta el container perfil*/
 }
 
 .form {
     transition: transform 0.5s ease;
 }
-.form.active {
-    transform: translatey(-50%);
-    display: block;
-}   
 
+.form.active {
+    transform: translateY(-50%);
+    display: block;
+}
 
 form {
-    border: 2px solid rgba(255, 0, 0, 0);
     padding: 1.8rem;
 }
+
 form p {
-    border: 2px solid rgba(0, 128, 0, 0);
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--color-text-secondary);
     margin-top: 0.3rem;
     margin-bottom: 1.8rem;
 }
+
 form p a {
-    border: 2px solid rgba(255, 0, 0, 0);
     color: var(--color-primary);
     font-weight: 700;
-}          
+}
 
 /* input-container */
 .input-container {
-    border: 2px solid rgba(0, 128, 0, 0);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1.2rem;
 }
 
-.input-container input {
-    padding: 0.7rem;
-    border: 2px solid var(--color-border);
-    border-radius: 0.4rem;
-    outline: none;
-}
-
+.input-container input,
 .input-container select {
     padding: 0.7rem;
     border: 2px solid var(--color-border);
@@ -114,81 +105,45 @@ form p a {
     color: var(--color-text-primary);
     background-color: #fff;
     width: 100%;
-    appearance: none; /* elimina estilo nativo */
+}
+
+.input-container select {
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
+
 .input-container label,
 .input-container a {
     font-size: 0.8rem;
     font-weight: 600;
 }
 
-/* input container a*/
-.input-container a{
+.input-container a {
     color: var(--color-primary);
 }
 
-/*remember-me */
+/* remember-me */
 .remember-me {
-    border: 2px solid rgba(255, 0, 0, 0);
     display: flex;
     gap: 0.3rem;
     margin-bottom: 1.7rem;
 }
-/*other-login */
-.other-login img{
-        width: 1rem;
-        height: 1.5rem;
-        margin-right: 0.5rem;
-}
 
-/*form button */
-form button {
-    width: 100%;
-    padding: 0.9rem 0;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: var(--color-secondary);
-    color: var(--color-button-text);
-    font-weight: 500;
-    margin-bottom: 0.3;
-    cursor: pointer;
-}
-
-form .btn-register {
-    margin-top: 1.5rem;
-}
-/*line-width-text */
-.line-width-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-secondary);
-    font-size: 0.8rem;
-    margin-top: 1rem;
-    margin-bottom: 1.3rem;
-}
-
-.line-width-text::before,
-.line-width-text::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid var(--color-border);
-    margin: 0 0.6rem;
-}
-
-/*other-login */
+/* other-login */
 .other-login {
-    border: 2px solid rgba(255, 0, 0, 0);
     display: flex;
     justify-content: center;
-    gap : 1rem;
+    gap: 1rem;
 }
 
-/*other-login a*/
+.other-login img {
+    width: 1rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
 .other-login a {
-    border: 2px solid rgba(0, 128, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,13 +155,51 @@ form .btn-register {
     text-decoration: none;
 }
 
-.other-login img {
-    width: 1rem;
+/* form button */
+form button {
+    width: 100%;
+    padding: 0.9rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--color-secondary);
+    color: var(--color-button-text);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
 }
 
+form .btn-register {
+    margin-top: 1.5rem;
+}
+
+/*marco de bloques al tocar resalta color*/ 
+.input-container input:hover,
+.input-container select:hover {
+  border-color: var(--color-secondary);
+  transition: border-color 0.3s ease;
+}
+
+/* line-width-text */
+.line-width-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    margin: 1rem 0 1.3rem;
+}
+
+.line-width-text::before,
+.line-width-text::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--color-border);
+    margin: 0 0.6rem;
+}
+
+/* banner */
 .banner {
-    border: 2px solid rgba(0, 0, 0, 0);
-    height: 110%;
+    height: 105%;
     padding: 5rem 2rem 0 2rem;
     position: relative;
     overflow: hidden;
@@ -214,83 +207,80 @@ form .btn-register {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /*background-color: var(--color-primary); */
 }
 
 .banner h1 {
-    border: 2px solid solid rgb(255, 0, 0);
     color: var(--color-title);
     font-size: 3rem;
     line-height: 0.9;
 }
 
 .banner h1 span {
-   border: 2px solid rgba(255, 208, 0, 0);
-   display: block;
-   color:var(--color-secondary);
-   font-weight: 500;
+    display: block;
+    color: var(--color-secondary);
+    font-weight: 500;
 }
 
 .banner p {
-    background-color: rgba(255, 255, 255, 0.3); /* blanco traslúcido */
+    background-color: rgba(255, 255, 255, 0.3);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     display: inline-block;
-    backdrop-filter: blur(3px); /* efecto vidrio opcional */
-    -webkit-backdrop-filter: blur(3px); /* soporte Safari */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .banner img {
-    border: #4267B2;
     position: absolute;
     bottom: 2.5rem;
     right: -2rem;
     width: 95%;
 }
 
+/* shapes */
 .shape {
-   background-color: #FFFFFF;
-   border-radius: 55%;
-   opacity: 0.05;
-   position: absolute;
+    background-color: #FFFFFF;
+    border-radius: 55%;
+    opacity: 0.05;
+    position: absolute;
 }
 
-.shape1{
+.shape1 {
     width: 12.5rem;
     height: 12.5rem;
     top: 1.25rem;
     left: 20rem;
 }
 
-.shape2{
+.shape2 {
     width: 28rem;
     height: 28rem;
     bottom: -10rem;
     right: -10rem;
 }
 
-.shape3{
+.shape3 {
     width: 18rem;
     height: 15rem;
     left: -10rem;
     top: 10.5rem;
 }
 
-/*sidebar*/
+/* sidebar */
 .sidebar {
-    border: 2px solid rgba(255, 0, 0, 0);
     background-color: var(--color-background-form);
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 120%;
+    width: 110%;
     position: relative;
     user-select: none;
 }
-/*barra lateral izquierdo*/
+
+/*barra lateral sidebar*/
 .sidebar::after {
     content: "";
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     height: 50%;
     width: 0.3rem;
     position: absolute;
@@ -299,11 +289,11 @@ form .btn-register {
     transition: top 0.5s ease;
 }
 
-.sidebar.active::after{
+.sidebar.active::after {
     top: 50%;
 }
+
 .sidebar .sign {
-    border: 2px solid rgba(0, 128, 0, 0);
     width: 100%;
     height: 100%;
     display: flex;
@@ -323,23 +313,43 @@ form .btn-register {
     font-size: 0.8rem;
 }
 
-/*form Animation */
-@keyframes slidein{
+/* footer */
+.footer {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.404);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* animations */
+@keyframes slidein {
     from {opacity: 0; transform: translateX(-100%);}
-    to {opacity: 1; transform: translateY(0);}
+    to {opacity: 1; transform: translateX(0);}
 }
 
-/*Brounce  Animation*/
-@keyframes bounce-up{
-    0% {transform: translatey(0);}
-    20% {transform: translatey(-7px);}
-    40% {transform: translatey(2);}
-    60% {transform: translatey(0);}
+@keyframes bounce-up {
+    0% {transform: translateY(0);}
+    20% {transform: translateY(-7px);}
+    40% {transform: translateY(2px);}
+    60% {transform: translateY(0);}
 }
 
-@keyframes bounce-down{
-    0% {transform: translatey(0);}
-    20% {transform: translatey(-7px);}
-    40% {transform: translatey(2);}
-    60% {transform: translatey(0);}
+@keyframes bounce-down {
+    0% {transform: translateY(0);}
+    20% {transform: translateY(-7px);}
+    40% {transform: translateY(2px);}
+    60% {transform: translateY(0);}
 }
+
