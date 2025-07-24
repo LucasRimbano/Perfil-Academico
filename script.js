@@ -6,6 +6,10 @@ const sidebar = document.getElementById('sidebar');
 const signin = document.getElementById('sign-in');
 const signup = document.getElementById('sign-up');
 const container = document.getElementById('container');
+// Botón para ir al perfil
+const btnRegistrarPerfil = document.getElementById('btn-registar-perfil');
+
+// Enlaces de navegación
 
 const LinkSignin = document.getElementById('link-sign-in');
 const LinkSignUp = document.getElementById('link-sign-up');
@@ -52,7 +56,12 @@ btnSignUp.addEventListener('click', () => {
     changeSignup();
 });
 
-// Animaciones
+
+btnRegistrarPerfil.addEventListener('click', () => {
+  // Si quieres copiar datos antes, hazlo aquí
+    changeSignup(); 
+});   
+    // Animaciones
 function changeSignin() {
     form.classList.remove('active');
     sidebar.classList.remove('active');
