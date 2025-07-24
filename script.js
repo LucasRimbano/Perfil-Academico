@@ -118,7 +118,7 @@ formSignUp.addEventListener('submit', function (e) {
   localStorage.setItem('userProfile', JSON.stringify(userProfile));
 
   // Redirigir a plan-de-estudio.html
-  window.location.href = 'plan-de-estudio.html';
+  window.location.href = 'Plan-estudios-carrera.html';
 });
 
 // 🧠 Código específico de plan-de-estudio.html
