@@ -62,6 +62,30 @@
     }
   </style>
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const profileJSON = localStorage.getItem('userProfile');
+    if (!profileJSON) return;
+
+    const { name, dni, email, career } = JSON.parse(profileJSON);
+
+    const perfilNombreDOM   = document.getElementById('perfil-nombre');
+    const perfilDniDOM      = document.getElementById('perfil-dni');
+    const perfilEmailDOM    = document.getElementById('perfil-email');
+    const perfilCarreraDOM  = document.getElementById('perfil-carrera');
+
+    if (perfilNombreDOM)   perfilNombreDOM.textContent   = name;
+    if (perfilDniDOM)      perfilDniDOM.textContent      = dni;
+    if (perfilEmailDOM)    perfilEmailDOM.textContent    = email;
+    if (perfilCarreraDOM)  perfilCarreraDOM.textContent  = career;
+  });
+
+  // Botón cerrar sesión
+  document.getElementById('btn-logout')?.addEventListener('click', () => {
+    localStorage.removeItem('userProfile');
+    window.location.href = 'index.html';
+  });
+</script>
 <body>
 
   <div class="profile-container">
@@ -90,28 +114,6 @@
 
     <button id="btn-logout">Cerrar sesión</button>
   </div>
-
-  <script>
-    // Al cargar la página, leemos el perfil desde localStorage
-    document.addEventListener('DOMContentLoaded', () => {
-      const profileJSON = localStorage.getItem('userProfile');
-      if (!profileJSON) return;
-
-      const { name, dni, email, career } = JSON.parse(profileJSON);
-
-      document.getElementById('perfil-nombre').textContent  = name;
-      document.getElementById('perfil-dni').textContent     = dni;
-      document.getElementById('perfil-email').textContent   = email;
-      document.getElementById('perfil-carrera').textContent = career;
-    });
-
-    // Botón Cerrar sesión: limpia localStorage y vuelve al inicio
-    document.getElementById('btn-logout')
-      .addEventListener('click', () => {
-        localStorage.removeItem('userProfile');
-        window.location.href = 'index.html';
-      });
-  </script>
 
 </body>
 </html>

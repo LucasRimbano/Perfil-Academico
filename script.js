@@ -6,15 +6,15 @@ const sidebar = document.getElementById('sidebar');
 const signin = document.getElementById('sign-in');
 const signup = document.getElementById('sign-up');
 const container = document.getElementById('container');
+
 // Botón para ir al perfil
 const btnRegistrarPerfil = document.getElementById('btn-registar-perfil');
 
 // Enlaces de navegación
-
 const LinkSignin = document.getElementById('link-sign-in');
 const LinkSignUp = document.getElementById('link-sign-up');
 
-// Campos del perfil (para mostrar)
+// Campos del perfil (para mostrar en la misma vista)
 const perfilNombre = document.getElementById('perfil-nombre');
 const perfilDni = document.getElementById('perfil-dni');
 const perfilEmail = document.getElementById('perfil-email');
@@ -38,87 +38,112 @@ const inputCarreraSignIn = document.getElementById('carrera-signin');
 
 // Enlaces entre vistas
 if (LinkSignUp) {
-    LinkSignUp.addEventListener('click', () => {
-        changeSignin();
-    });
+  LinkSignUp.addEventListener('click', () => {
+    changeSignin();
+  });
 }
 if (LinkSignin) {
-    LinkSignin.addEventListener('click', () => {
-        changeSignup();
-    });
+  LinkSignin.addEventListener('click', () => {
+    changeSignup();
+  });
 }
 
 btnSignIn.addEventListener('click', () => {
-    changeSignin();
+  changeSignin();
 });
 
 btnSignUp.addEventListener('click', () => {
-    changeSignup();
+  changeSignup();
 });
 
-
 btnRegistrarPerfil.addEventListener('click', () => {
-  // Si quieres copiar datos antes, hazlo aquí
-    changeSignup(); 
-});   
-    // Animaciones
+  changeSignup();
+});
+
+// Animaciones
 function changeSignin() {
-    form.classList.remove('active');
-    sidebar.classList.remove('active');
-    container.style.animation = 'none';
-    container.style.animation = 'bounce-up 1s ease';
-    transition(signin);
+  form.classList.remove('active');
+  sidebar.classList.remove('active');
+  container.style.animation = 'none';
+  container.style.animation = 'bounce-up 1s ease';
+  transition(signin);
 }
 
 function changeSignup() {
-    form.classList.add('active');
-    sidebar.classList.add('active');
-    container.style.animation = 'none';
-    container.style.animation = 'bounce-down 1s ease';
-    transition(signup);
+  form.classList.add('active');
+  sidebar.classList.add('active');
+  container.style.animation = 'none';
+  container.style.animation = 'bounce-down 1s ease';
+  transition(signup);
 }
 
 function transition(parent) {
-    const children = parent.children;
+  const children = parent.children;
+  Array.from(children).forEach((child) => {
+    child.style.opacity = '0';
+    child.style.animation = 'none';
+  });
 
-    Array.from(children).forEach((child) => {
-        child.style.opacity = '0';
-        child.style.animation = 'none';
+  setTimeout(() => {
+    Array.from(children).forEach((child, index) => {
+      child.style.animation = 'slidein 0.4s ease forwards';
+      child.style.animationDelay = (index * 0.05) + 's';
     });
-
-    setTimeout(() => {
-        Array.from(children).forEach((child, index) => {
-            child.style.animation = 'slidein 0.4s ease forwards';
-            child.style.animationDelay = (index * 0.05) + 's';
-        });
-    }, 300);
+  }, 300);
 }
 
 // 🔁 Cuando se envía el formulario de REGISTRO
 formSignUp.addEventListener('submit', function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Copiar a los inputs de perfil
-    inputNameSignIn.value = inputNameSignUp.value.trim();
-    inputDniSignIn.value = inputDniSignUp.value.trim();
-    inputEmailSignIn.value = inputEmailSignUp.value.trim();
-    inputCarreraSignIn.value = inputCarreraSignUp.value.trim();
+  // Copiar a los inputs de perfil
+  inputNameSignIn.value = inputNameSignUp.value.trim();
+  inputDniSignIn.value = inputDniSignUp.value.trim();
+  inputEmailSignIn.value = inputEmailSignUp.value.trim();
+  inputCarreraSignIn.value = inputCarreraSignUp.value.trim();
 
-    // Mostrar en elementos visibles de perfil
-    perfilNombre.textContent = inputNameSignUp.value.trim();
-    perfilDni.textContent = inputDniSignUp.value.trim();
-    perfilEmail.textContent = inputEmailSignUp.value.trim();
-    perfilCarrera.textContent = inputCarreraSignUp.value.trim();
+  // Mostrar en elementos visibles de perfil
+  perfilNombre.textContent = inputNameSignUp.value.trim();
+  perfilDni.textContent = inputDniSignUp.value.trim();
+  perfilEmail.textContent = inputEmailSignUp.value.trim();
+  perfilCarrera.textContent = inputCarreraSignUp.value.trim();
 
-    // Cambiar a vista de perfil
-    changeSignin();
+  // Guardar perfil en localStorage
+  const userProfile = {
+    name: inputNameSignUp.value.trim(),
+    dni: inputDniSignUp.value.trim(),
+    email: inputEmailSignUp.value.trim(),
+    career: inputCarreraSignUp.value.trim()
+  };
+  localStorage.setItem('userProfile', JSON.stringify(userProfile));
 
-    // Mostrar contenedor de perfil si existe
-    const perfilContainer = document.getElementById('perfil-container');
-    if (perfilContainer) {
-        perfilContainer.style.display = 'block';
-    }
-
-    // Ocultar formulario de registro si querés
-    // formSignUp.style.display = 'none';
+  // Redirigir a plan-de-estudio.html
+  window.location.href = 'plan-de-estudio.html';
 });
+
+// 🧠 Código específico de plan-de-estudio.html
+document.addEventListener('DOMContentLoaded', () => {
+  const profileJSON = localStorage.getItem('userProfile');
+  if (!profileJSON) return;
+
+  const { name, dni, email, career } = JSON.parse(profileJSON);
+
+  const perfilNombreDOM = document.getElementById('perfil-nombre');
+  const perfilDniDOM = document.getElementById('perfil-dni');
+  const perfilEmailDOM = document.getElementById('perfil-email');
+  const perfilCarreraDOM = document.getElementById('perfil-carrera');
+
+  if (perfilNombreDOM) perfilNombreDOM.textContent = name;
+  if (perfilDniDOM) perfilDniDOM.textContent = dni;
+  if (perfilEmailDOM) perfilEmailDOM.textContent = email;
+  if (perfilCarreraDOM) perfilCarreraDOM.textContent = career;
+});
+
+// 🔒 Botón Cerrar sesión
+const btnLogout = document.getElementById('btn-logout');
+if (btnLogout) {
+  btnLogout.addEventListener('click', () => {
+    localStorage.removeItem('userProfile');
+    window.location.href = 'index.html';
+  });
+}
