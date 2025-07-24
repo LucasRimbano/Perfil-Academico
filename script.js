@@ -8,24 +8,31 @@ const signup = document.getElementById('sign-up');
 const container = document.getElementById('container');
 
 const LinkSignin = document.getElementById('link-sign-in');
-const LinkSignUp = document.getElementById('link-sign-up'); // solo si usás uno para volver
+const LinkSignUp = document.getElementById('link-sign-up');
 
-// Nuevos campos del formulario de ingreso
-const inputNombre = document.getElementById('name');
-const inputDni = document.getElementById('dni');
-const inputEmail = document.getElementById('email-login');
-const inputCarrera = document.getElementById('carrera');
-
-// Campos del perfil
+// Campos del perfil (para mostrar)
 const perfilNombre = document.getElementById('perfil-nombre');
 const perfilDni = document.getElementById('perfil-dni');
 const perfilEmail = document.getElementById('perfil-email');
 const perfilCarrera = document.getElementById('perfil-carrera');
 
-// Formulario de ingreso
+// Formularios
+const formSignUp = document.getElementById('sign-up');
 const formSignIn = document.getElementById('sign-in');
 
-// Eventos (solo si existen los links)
+// Inputs de registro
+const inputNameSignUp = document.getElementById('name-signup');
+const inputDniSignUp = document.getElementById('dni-signup');
+const inputEmailSignUp = document.getElementById('email-signup');
+const inputCarreraSignUp = document.getElementById('carrera-signup');
+
+// Inputs del perfil (lectura)
+const inputNameSignIn = document.getElementById('name-signin');
+const inputDniSignIn = document.getElementById('dni-signin');
+const inputEmailSignIn = document.getElementById('email-signin');
+const inputCarreraSignIn = document.getElementById('carrera-signin');
+
+// Enlaces entre vistas
 if (LinkSignUp) {
     LinkSignUp.addEventListener('click', () => {
         changeSignin();
@@ -78,14 +85,31 @@ function transition(parent) {
     }, 300);
 }
 
-// Capturar datos e ir al perfil
-formSignIn.addEventListener('submit', function (e) {
+// 🔁 Cuando se envía el formulario de REGISTRO
+formSignUp.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    perfilNombre.textContent = inputNombre.value.trim();
-    perfilDni.textContent = inputDni.value.trim();
-    perfilEmail.textContent = inputEmail.value.trim();
-    perfilCarrera.textContent = inputCarrera.value.trim();
+    // Copiar a los inputs de perfil
+    inputNameSignIn.value = inputNameSignUp.value.trim();
+    inputDniSignIn.value = inputDniSignUp.value.trim();
+    inputEmailSignIn.value = inputEmailSignUp.value.trim();
+    inputCarreraSignIn.value = inputCarreraSignUp.value.trim();
 
-    changeSignup();
+    // Mostrar en elementos visibles de perfil
+    perfilNombre.textContent = inputNameSignUp.value.trim();
+    perfilDni.textContent = inputDniSignUp.value.trim();
+    perfilEmail.textContent = inputEmailSignUp.value.trim();
+    perfilCarrera.textContent = inputCarreraSignUp.value.trim();
+
+    // Cambiar a vista de perfil
+    changeSignin();
+
+    // Mostrar contenedor de perfil si existe
+    const perfilContainer = document.getElementById('perfil-container');
+    if (perfilContainer) {
+        perfilContainer.style.display = 'block';
+    }
+
+    // Ocultar formulario de registro si querés
+    // formSignUp.style.display = 'none';
 });

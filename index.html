@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Perfil Academico</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
 </head>
 <body>
    <!--video fondo-->
@@ -19,19 +21,19 @@
                         <h2>Registrar Perfil</h2>
                         <div class="input-container">
                             <label for="name">Ingresar Nombre y Apellido🗣️</label>
-                            <input type="text" id="name" placeholder="Ingresar y Apellido" required>
+                            <input type="text" id="name-signup" placeholder="Ingresar y Apellido" required>
                         </div>
                         <div class="input-container">
                             <label for="dni">Ingresar DNI🪪</label>
-                            <input id="dni" name="dni" type="text" value="" placeholder="Ej: 01234">
+                            <input id="dni-signup" name="dni" type="text" value="" placeholder="Ej: 01234">
                         </div>
                         <div class="input-container">
                             <label for="email">Ingresar Email📧</label>
-                            <input type="email" id="email-register" placeholder="Ejemplo@gmail.com" required>
+                            <input type="email" id="email-signup" placeholder="Ejemplo@gmail.com" required>
                         </div>
                         <div class="input-container">
                             <label for="carrera">Seleccionar tipo de carrera 🎓</label>
-                            <select id="carrera" required>
+                            <select id="carrera-signup" required>
                                 <option value="" disabled selected>Elegí una carrera</option>
                                 <option value="Programacion Informatica">Programacion Informatica</option>
                                 <option value="Ingenieria">Ingeniería</option>
@@ -51,19 +53,19 @@
                         <h2>Perfil Academico</h2>
                         <div class="input-container">
                             <label for="name">Nombre y Apellido🗣️</label>
-                            <input type="text" id="name" placeholder="Ej: Juan Pérez" required>
+                            <input type="text" id="name-signin" placeholder="Ej: Juan Pérez" required readonly>
                         </div>
                         <div class="input-container">
                            <label for="dni">DNI🪪</label>
-                           <input id="dni" name="dni" type="text" value="" placeholder="Ej: 01234">
+                           <input id="dni-signin" name="dni" type="text" value="" placeholder="Ej: 01234" readonly>
                         </div>
                         <div class="input-container">
                            <label for="email">Email📧</label>
-                           <input type="email" id="email-login" placeholder="Introducce tu correo electronico" required>
+                           <input type="email" id="email-signin" placeholder="Introducce tu correo electronico" required readonly>
                         </div>
                         <div class="input-container">
                           <label for="carrera">Tipo de carrera🎓</label>
-                          <input type="text" id="carrera" placeholder="Ej: Ingeniería, Medicina..." required>
+                          <input type="text" id="carrera-signin" placeholder="Ej: Ingeniería, Medicina..." required readonly>
                         </div>
                         <button type="submit">INGRESAR</button>
                         <div class="blanco">
