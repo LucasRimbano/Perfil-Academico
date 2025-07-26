@@ -62,12 +62,41 @@
     }
   </style>
 </head>
+<body>
+
+  <div class="profile-container">
+    <img src="images/unsampng.png" alt="Logo UNSAM" class="logo" />
+    <h1>Perfil Académico</h1>
+
+    <div class="profile-info">
+      <label>Nombre y Apellido:</label>
+      <span id="perfil-nombre">-</span>
+    </div>
+
+    <div class="profile-info">
+      <label>DNI:</label>
+      <span id="perfil-dni">-</span>
+    </div>
+
+    <div class="profile-info">
+      <label>Email:</label>
+      <span id="perfil-email">-</span>
+    </div>
+
+    <div class="profile-info">
+      <label>Carrera:</label>
+      <span id="perfil-carrera">-</span>
+    </div>
+
+    <button id="btn-logout">Cerrar sesión</button>
+  </div>
+<!--recive los datos cargados en el form htm index-->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const profileJSON = localStorage.getItem('userProfile');
     if (!profileJSON) return;
 
-    const { name, dni, email, career } = JSON.parse(profileJSON);
+    const { name, dni, email, carrera } = JSON.parse(profileJSON);
 
     const perfilNombreDOM   = document.getElementById('perfil-nombre');
     const perfilDniDOM      = document.getElementById('perfil-dni');
@@ -77,7 +106,7 @@
     if (perfilNombreDOM)   perfilNombreDOM.textContent   = name;
     if (perfilDniDOM)      perfilDniDOM.textContent      = dni;
     if (perfilEmailDOM)    perfilEmailDOM.textContent    = email;
-    if (perfilCarreraDOM)  perfilCarreraDOM.textContent  = career;
+    if (perfilCarreraDOM)  perfilCarreraDOM.textContent  = carrera;
   });
 
   // Botón cerrar sesión
@@ -86,34 +115,5 @@
     window.location.href = 'index.html';
   });
 </script>
-<body>
-
-  <div class="profile-container">
-    <img src="images/unsampng.png" alt="Logo UNSAM" class="logo" />
-    <h1>Perfil Académico</h1>
-
-    <div class="profile-info">
-      <label>Nombre y Apellido:</label>
-      <span id="perfil-nombre">–</span>
-    </div>
-
-    <div class="profile-info">
-      <label>DNI:</label>
-      <span id="perfil-dni">–</span>
-    </div>
-
-    <div class="profile-info">
-      <label>Email:</label>
-      <span id="perfil-email">–</span>
-    </div>
-
-    <div class="profile-info">
-      <label>Carrera:</label>
-      <span id="perfil-carrera">–</span>
-    </div>
-
-    <button id="btn-logout">Cerrar sesión</button>
-  </div>
-
 </body>
 </html>

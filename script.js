@@ -60,6 +60,8 @@ btnRegistrarPerfil.addEventListener('click', () => {
   changeSignup();
 });
 
+
+
 // Animaciones
 function changeSignin() {
   form.classList.remove('active');
@@ -113,7 +115,7 @@ formSignUp.addEventListener('submit', function (e) {
     name: inputNameSignUp.value.trim(),
     dni: inputDniSignUp.value.trim(),
     email: inputEmailSignUp.value.trim(),
-    career: inputCarreraSignUp.value.trim()
+    carrera: inputCarreraSignUp.value.trim()
   };
   localStorage.setItem('userProfile', JSON.stringify(userProfile));
 
@@ -122,28 +124,63 @@ formSignUp.addEventListener('submit', function (e) {
 });
 
 // 🧠 Código específico de plan-de-estudio.html
-document.addEventListener('DOMContentLoaded', () => {
-  const profileJSON = localStorage.getItem('userProfile');
-  if (!profileJSON) return;
 
-  const { name, dni, email, career } = JSON.parse(profileJSON);
+document.addEventListener("DOMContentLoaded", () => {
+  // Botones y formularios
+  const btnRegistrarPerfil = document.getElementById("btn-registar-perfil");
+  const formSignUp = document.getElementById("sign-up");
 
-  const perfilNombreDOM = document.getElementById('perfil-nombre');
-  const perfilDniDOM = document.getElementById('perfil-dni');
-  const perfilEmailDOM = document.getElementById('perfil-email');
-  const perfilCarreraDOM = document.getElementById('perfil-carrera');
+  const inputNameSignUp = document.getElementById("name-signup");
+  const inputDniSignUp = document.getElementById("dni-signup");
+  const inputEmailSignUp = document.getElementById("email-signup");
+  const inputCarreraSignUp = document.getElementById("carrera-signup");
 
-  if (perfilNombreDOM) perfilNombreDOM.textContent = name;
-  if (perfilDniDOM) perfilDniDOM.textContent = dni;
-  if (perfilEmailDOM) perfilEmailDOM.textContent = email;
-  if (perfilCarreraDOM) perfilCarreraDOM.textContent = career;
+  // Registrar evento al botón de registrar
+  if (btnRegistrarPerfil && formSignUp) {
+    btnRegistrarPerfil.addEventListener("click", () => {
+    });
+
+    formSignUp.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Captura de datos
+      const userProfile = {
+        name: inputNameSignUp.value.trim(),
+        dni: inputDniSignUp.value.trim(),
+        email: inputEmailSignUp.value.trim(),
+        carrera: inputCarreraSignUp.value.trim()
+      };
+
+      // Guardar en localStorage
+      localStorage.setItem("userProfile", JSON.stringify(userProfile));
+
+      // Redirigir a página destino
+      window.location.href = "Plan-estudios-carrera.html"; // o la que corresponda
+    });
+  }
+
+  // Mostrar datos del perfil en la segunda página
+  const profileJSON = localStorage.getItem("userProfile");
+  if (profileJSON) {
+    const { name, dni, email, carrera } = JSON.parse(profileJSON);
+
+    const perfilNombreDOM = document.getElementById("perfil-nombre");
+    const perfilDniDOM = document.getElementById("perfil-dni");
+    const perfilEmailDOM = document.getElementById("perfil-email");
+    const perfilCarreraDOM = document.getElementById("perfil-carrera");
+
+    if (perfilNombreDOM) perfilNombreDOM.textContent = name;
+    if (perfilDniDOM) perfilDniDOM.textContent = dni;
+    if (perfilEmailDOM) perfilEmailDOM.textContent = email;
+    if (perfilCarreraDOM) perfilCarreraDOM.textContent = carrera;
+  }
+  
+   // 🔒 Botón Cerrar sesión
+  const btnLogout = document.getElementById("btn-logout");
+  if (btnLogout) {
+    btnLogout.addEventListener("click", () => {
+      localStorage.removeItem("userProfile");
+      window.location.href = "index.html";
+    });
+  }
 });
-
-// 🔒 Botón Cerrar sesión
-const btnLogout = document.getElementById('btn-logout');
-if (btnLogout) {
-  btnLogout.addEventListener('click', () => {
-    localStorage.removeItem('userProfile');
-    window.location.href = 'index.html';
-  });
-}
