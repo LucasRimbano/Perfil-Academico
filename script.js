@@ -8,7 +8,7 @@ const signup = document.getElementById('sign-up');
 const container = document.getElementById('container');
 
 // Botón para ir al perfil
-const btnRegistrarPerfil = document.getElementById('btn-registar-perfil');
+const btnRegistrarPerfil = document.getElementById('btn-registrar-perfil');
 
 // Enlaces de navegación
 const LinkSignin = document.getElementById('link-sign-in');
@@ -127,7 +127,7 @@ formSignUp.addEventListener('submit', function (e) {
 
 document.addEventListener("DOMContentLoaded", () => {
   // Botones y formularios
-  const btnRegistrarPerfil = document.getElementById("btn-registar-perfil");
+  const btnRegistrarPerfil = document.getElementById("btn-registrar-perfil");
   const formSignUp = document.getElementById("sign-up");
 
   const inputNameSignUp = document.getElementById("name-signup");
@@ -137,27 +137,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Registrar evento al botón de registrar
   if (btnRegistrarPerfil && formSignUp) {
-    btnRegistrarPerfil.addEventListener("click", () => {
-    });
+  // No hace falta usar btnRegistrarPerfil aquí, porque el "submit" del formulario ya lo cubre
 
-    formSignUp.addEventListener("submit", function (e) {
-      e.preventDefault();
+  formSignUp.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      // Captura de datos
-      const userProfile = {
-        name: inputNameSignUp.value.trim(),
-        dni: inputDniSignUp.value.trim(),
-        email: inputEmailSignUp.value.trim(),
-        carrera: inputCarreraSignUp.value.trim()
-      };
+    // Captura de datos del formulario de registro
+    const userProfile = {
+      name: inputNameSignUp.value.trim(),
+      dni: inputDniSignUp.value.trim(),
+      email: inputEmailSignUp.value.trim(),
+      carrera: inputCarreraSignUp.value.trim()
+    };
 
-      // Guardar en localStorage
-      localStorage.setItem("userProfile", JSON.stringify(userProfile));
+    // Guardar en localStorage
+    localStorage.setItem("userProfile", JSON.stringify(userProfile));
 
-      // Redirigir a página destino
-      window.location.href = "Plan-estudios-carrera.html"; // o la que corresponda
-    });
-  }
+    // También copiar a los inputs de ingreso por si lo usás ahí
+    inputNameSignIn.value = userProfile.name;
+    inputDniSignIn.value = userProfile.dni;
+    inputEmailSignIn.value = userProfile.email;
+    inputCarreraSignIn.value = userProfile.carrera;
+
+    // Mostrar en la vista de perfil del index.html
+    perfilNombre.textContent = userProfile.name;
+    perfilDni.textContent = userProfile.dni;
+    perfilEmail.textContent = userProfile.email;
+    perfilCarrera.textContent = userProfile.carrera;
+
+    // Cambiar de contenedor para mostrar la vista "perfil" (si tenés una función tipo changeSignup)
+    changeSignup();
+  });
+}
+
 
   // Mostrar datos del perfil en la segunda página
   const profileJSON = localStorage.getItem("userProfile");

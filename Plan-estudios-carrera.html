@@ -3,50 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perfil Académico</title>
+  <title>Perfil Académico y Plan de Estudios</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="images/favicon.ico" />
+
+  <!--css-->
   <style>
-    /* Ajustes rápidos para centrar y dar estilo */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 20px;
     }
+
     .profile-container {
       background: #fff;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       width: 100%;
-      max-width: 400px;
+      max-width: 500px;
+      margin: auto;
       text-align: center;
     }
+
     .profile-container img.logo {
       width: 80px;
       margin-bottom: 1rem;
     }
+
     .profile-container h1 {
       margin-bottom: 1.5rem;
       font-size: 1.8rem;
       color: #333;
     }
+
     .profile-info {
       text-align: left;
       margin-bottom: 1rem;
     }
+
     .profile-info label {
       font-weight: bold;
       display: inline-block;
       width: 130px;
     }
+
     .profile-info span {
       color: #555;
     }
+
     #btn-logout {
       margin-top: 1.5rem;
       padding: 0.6rem 1.2rem;
@@ -57,63 +63,238 @@
       cursor: pointer;
       transition: background 0.2s;
     }
+
     #btn-logout:hover {
       background: #005a9e;
+    }
+
+    .plan-container {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .left-panel, .right-panel {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background-color: #e6f0ff;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .left-panel, .right-panel {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Perfil Académico -->
   <div class="profile-container">
     <img src="images/unsampng.png" alt="Logo UNSAM" class="logo" />
     <h1>Perfil Académico</h1>
 
     <div class="profile-info">
       <label>Nombre y Apellido:</label>
-      <span id="perfil-nombre">-</span>
+      <span id="perfil-nombre"></span>
     </div>
 
     <div class="profile-info">
       <label>DNI:</label>
-      <span id="perfil-dni">-</span>
+      <span id="perfil-dni"></span>
     </div>
 
     <div class="profile-info">
       <label>Email:</label>
-      <span id="perfil-email">-</span>
+      <span id="perfil-email"></span>
     </div>
 
     <div class="profile-info">
       <label>Carrera:</label>
-      <span id="perfil-carrera">-</span>
+      <span id="perfil-carrera"></span>
     </div>
 
     <button id="btn-logout">Cerrar sesión</button>
   </div>
-<!--recive los datos cargados en el form htm index-->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const profileJSON = localStorage.getItem('userProfile');
-    if (!profileJSON) return;
 
-    const { name, dni, email, carrera } = JSON.parse(profileJSON);
+  <!-- Plan de Estudios -->
+  <div class="plan-container">
+    <div class="left-panel">
+      <h2>Materias</h2>
+      <table>
+        <thead>
+          <tr> <!--table eje x-->
+            <th>Actividad</th>
+            <th>Tipo</th>
+            <th>Año</th>
+            <th>Periodo</th>
+            <th>Nota</th>
+            <th>Origen</th>
+            <th>Créditos</th>
+            <th>Correlativas</th>
+          </tr>
+        </thead>
+        <tbody> <!--table eje y-->
+          <tr>
+            <td>MATEMÁTICA I</td>
+            <td>Materia</td>
+            <td>1</td>
+            <td>1er. Cuatrimestre</td>
+            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--nota-->
+            <td>Examen</td>
+            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--credito-->
+            <td>-</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Quimica I</td>
+            <td>Materia</td>
+            <td>1</td>
+            <td>1er. Cuatrimestre</td>
+            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--nota-->
+            <td>Examen</td>
+            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--credito-->
+            <td>-</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Fisica I</td>
+            <td>Materia</td>
+            <td>1</td>
+            <td>1er. Cuatrimestre</td>
+            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--nota-->
+            <td>Examen</td>
+            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--credito-->
+            <td>-</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Economia I</td>
+            <td>Materia</td>
+            <td>1</td>
+            <td>1er. Cuatrimestre</td>
+            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--nota-->
+            <td>Examen</td>
+            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--credito-->
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    const perfilNombreDOM   = document.getElementById('perfil-nombre');
-    const perfilDniDOM      = document.getElementById('perfil-dni');
-    const perfilEmailDOM    = document.getElementById('perfil-email');
-    const perfilCarreraDOM  = document.getElementById('perfil-carrera');
+    <div class="right-panel">
+      <h2>Cargar Notas - Tu Carrera</h2>
+      <table id="editable-table">
+        <thead>
+          <tr>
+            <th>Actividad</th>
+            <th>Año</th>
+            <th>Periodo</th>
+            <th>Nota</th>
+            <th>Origen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Se llena con JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-    if (perfilNombreDOM)   perfilNombreDOM.textContent   = name;
-    if (perfilDniDOM)      perfilDniDOM.textContent      = dni;
-    if (perfilEmailDOM)    perfilEmailDOM.textContent    = email;
-    if (perfilCarreraDOM)  perfilCarreraDOM.textContent  = carrera;
-  });
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const profileJSON = localStorage.getItem('userProfile');
+      if (!profileJSON) return;
 
-  // Botón cerrar sesión
-  document.getElementById('btn-logout')?.addEventListener('click', () => {
-    localStorage.removeItem('userProfile');
-    window.location.href = 'index.html';
-  });
-</script>
+      const { name, dni, email, carrera } = JSON.parse(profileJSON);
+
+      // Mostrar perfil
+      document.getElementById('perfil-nombre').textContent = name;
+      document.getElementById('perfil-dni').textContent = dni;
+      document.getElementById('perfil-email').textContent = email;
+      document.getElementById('perfil-carrera').textContent = carrera;
+
+      // Plan de estudios
+      const materiasPorCarrera = {
+        "Programación": [
+          { actividad: "ALGORITMOS I", año: 1, periodo: "1er. Cuatrimestre" },
+          { actividad: "BASES DE DATOS", año: 1, periodo: "2do. Cuatrimestre" },
+          { actividad: "PROGRAMACIÓN II", año: 2, periodo: "1er. Cuatrimestre" }
+        ],
+        "Diseño": [
+          { actividad: "DISEÑO I", año: 1, periodo: "1er. Cuatrimestre" },
+          { actividad: "DISEÑO II", año: 2, periodo: "2do. Cuatrimestre" }
+        ]
+      };
+
+      const materias = materiasPorCarrera[carrera] || [];
+      const tbody = document.querySelector("#editable-table tbody");
+
+      if (materias.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5">No se encontraron materias para la carrera: ${carrera || "No definida"}</td></tr>`;
+        return;
+      }
+
+      materias.forEach(materia => {
+        const row = document.createElement("tr");
+        row.innerHTML = ` 
+          <td>${materia.actividad}</td>
+          <td>${materia.año}</td>
+          <td>${materia.periodo}</td>
+          <td><input type="text" name="nota" placeholder="Ej: 7 (Aprobado)"></td>
+          <td>
+            <select name="origen">
+              <option value="">-</option>
+              <option value="Examen">Examen</option>
+              <option value="Promoción">Promoción</option>
+            </select>
+          </td> `;
+        tbody.appendChild(row);
+      });
+    });
+
+    // Botón cerrar sesión
+    document.getElementById('btn-logout')?.addEventListener('click', () => {
+      localStorage.removeItem('userProfile');
+      window.location.href = 'index.html';
+    });
+  </script>
+  <div>
+    <footer class="footer">
+      <p>© Universidad Nacional de San Martín - 2025. Todos los derechos reservados. Desarrollado por Lucas Rimbano y Lucas Barcos.</p>
+    </footer>
+  </div>
 </body>
 </html>
