@@ -15,14 +15,14 @@
       background: #f5f5f5;
       padding: 20px;
     }
-
+     /*container datos*/
     .profile-container {
       background: #fff;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       width: 100%;
-      max-width: 500px;
+      max-width: 400px;
       margin: auto;
       text-align: center;
     }
@@ -67,22 +67,47 @@
     #btn-logout:hover {
       background: #005a9e;
     }
-
+    /*tabla plan estudios*/
     .plan-container {
-      margin-top: 40px;
+      margin-top: -30px;
       display: flex;
       gap: 20px;
       justify-content: center;
+      align-items: flex-start;
       flex-wrap: wrap;
+      max-width: 90vw;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .left-panel, .right-panel {
+
+    .panel-inferior, .right-panel {
       background: #fff;
       padding: 20px;
       border-radius: 10px;
       width: 100%;
-      max-width: 800px;
+      max-width: 850px;
+      max-height: 400px;
+      overflow: auto;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .panel-inferior::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .panel-inferior::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    
+    .panel-inferior::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+    
+    .panel-inferior::-webkit-scrollbar-thumb:hover {
+      background: #555;
     }
 
     table {
@@ -100,7 +125,14 @@
     th {
       background-color: #e6f0ff;
     }
-
+    td input[type="number"],
+    td select[name="correlativas"] {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    /*lineas de la tabla */
     input[type="text"], select {
       width: 100%;
       padding: 5px;
@@ -109,7 +141,7 @@
     }
 
     @media (max-width: 768px) {
-      .left-panel, .right-panel {
+      .panel-inferior, .right-panel {
         width: 100%;
       }
     }
@@ -147,73 +179,28 @@
 
   <!-- Plan de Estudios -->
   <div class="plan-container">
-    <div class="left-panel">
-      <h2>Materias</h2>
-      <table>
+    <div class="panel-inferior">
+      <h2>Plan de Estudios</h2>
+      <table id="editable-table">
         <thead>
-          <tr> <!--table eje x-->
+          <tr>
             <th>Actividad</th>
             <th>Tipo</th>
             <th>Año</th>
             <th>Periodo</th>
             <th>Nota</th>
             <th>Origen</th>
-            <th>Créditos</th>
             <th>Correlativas</th>
           </tr>
         </thead>
-        <tbody> <!--table eje y-->
-          <tr>
-            <td>MATEMÁTICA I</td>
-            <td>Materia</td>
-            <td>1</td>
-            <td>1er. Cuatrimestre</td>
-            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--nota-->
-            <td>Examen</td>
-            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--credito-->
-            <td>-</td>
-          </tr>
-        </tbody>
+
         <tbody>
-          <tr>
-            <td>Quimica I</td>
-            <td>Materia</td>
-            <td>1</td>
-            <td>1er. Cuatrimestre</td>
-            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--nota-->
-            <td>Examen</td>
-            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--credito-->
-            <td>-</td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td>Fisica I</td>
-            <td>Materia</td>
-            <td>1</td>
-            <td>1er. Cuatrimestre</td>
-            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--nota-->
-            <td>Examen</td>
-            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--credito-->
-            <td>-</td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td>Economia I</td>
-            <td>Materia</td>
-            <td>1</td>
-            <td>1er. Cuatrimestre</td>
-            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--nota-->
-            <td>Examen</td>
-            <td><input type="text" style="width: 30px; padding: 2px;" /></td><!--credito-->
-            <td>-</td>
-          </tr>
+          <!-- Se llena con JS -->
         </tbody>
       </table>
     </div>
-
-    <div class="right-panel">
+      <!--table right-->
+     <div class="right-panel">
       <h2>Cargar Notas - Tu Carrera</h2>
       <table id="editable-table">
         <thead>
@@ -222,7 +209,6 @@
             <th>Año</th>
             <th>Periodo</th>
             <th>Nota</th>
-            <th>Origen</th>
           </tr>
         </thead>
         <tbody>
@@ -248,16 +234,33 @@
 
       // Plan de estudios
       const materiasPorCarrera = {
-        "Programación": [
-          { actividad: "ALGORITMOS I", año: 1, periodo: "1er. Cuatrimestre" },
-          { actividad: "BASES DE DATOS", año: 1, periodo: "2do. Cuatrimestre" },
-          { actividad: "PROGRAMACIÓN II", año: 2, periodo: "1er. Cuatrimestre" }
-        ],
-        "Diseño": [
-          { actividad: "DISEÑO I", año: 1, periodo: "1er. Cuatrimestre" },
-          { actividad: "DISEÑO II", año: 2, periodo: "2do. Cuatrimestre" }
-        ]
-      };
+  "Programacion Informatica": [
+    { actividad: "MATEMÁTICA I (MA-1C10071)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
+    { actividad: "LABORATORIO DE COMPUTACIÓN I (MA-1C50051)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
+    { actividad: "ELECTRICIDAD Y MAGNETISMO (MA-1C20071)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
+    { actividad: "LABORATORIO DE COMPUTACIÓN II (MA-1C50052)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
+    { actividad: "SISTEMAS DE PROCESAMIENTO DE DATOS (MA-1C50053)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre" },
+    { actividad: "MATEMÁTICA II (MA-1C10072)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre" },
+    { actividad: "ALGORITMOS I (MA-1C5AL54)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre" },
+    { actividad: "MATEMÁTICA III (MA-1C50055)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre" },
+    { actividad: "CONCEPTOS DE ARQUITECTURAS Y SISTEMAS OPERATIVOS (MA-1C50056)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre" },
+    { actividad: "ALGORITMOS II (MA-1AQ0010)", tipo: "Materia", año: 2, periodo: ". Cuatrimestre" },
+    { actividad: "REDES LOCALES (MA-1AQ0011)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre" },
+    { actividad: "MÉTODOS NUMÉRICOS (MA-1AQ0012)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre" },
+    { actividad: "ALGORITMOS III (MA-1AQ0013)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre" },
+    { actividad: "BASES DE DATOS (MA-1AQ0014)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre" },
+    { actividad: "SEMINARIO DE PROGRAMACIÓN CONCURRENTE, PARALELA Y DISTRIBUIDA (MA-1AQ0015)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre" },
+    { actividad: "PROGRAMACIÓN CON HERRAMIENTAS MODERNAS (MA-1AQ0016)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" },
+    { actividad: "PROYECTOS DE SOFTWARE (MA-1AQ0017)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" },
+    { actividad: "PARADIGMAS DE PROGRAMACIÓN (MA-1AQ0040)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" }
+  ],
+  "Diseño": [
+    { actividad: "DISEÑO I", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
+    { actividad: "DISEÑO II", tipo: "Materia", año: 2, periodo: ". Cuatrimestre" }
+  ]
+};
+
+      
 
       const materias = materiasPorCarrera[carrera] || [];
       const tbody = document.querySelector("#editable-table tbody");
@@ -271,16 +274,25 @@
         const row = document.createElement("tr");
         row.innerHTML = ` 
           <td>${materia.actividad}</td>
+          <td>${materia.tipo}</td>
           <td>${materia.año}</td>
           <td>${materia.periodo}</td>
-          <td><input type="text" name="nota" placeholder="Ej: 7 (Aprobado)"></td>
+          <td><input type="text" name="nota" placeholder="" style="width: 50px;"></td>
           <td>
-            <select name="origen">
-              <option value="">-</option>
-              <option value="Examen">Examen</option>
+            <select name="origen" style="width: 105px;">
+              <option value=""></option>
+              <option value="Regularidad">Regularidad</option>
               <option value="Promoción">Promoción</option>
             </select>
-          </td> `;
+          </td> 
+          <td>
+            <select name="correlativas">
+               <option value=""></option>
+               <option value="Sí">Sí</option>
+               <option value="No">No</option>
+            </select>
+          </td>`;
+           
         tbody.appendChild(row);
       });
     });
