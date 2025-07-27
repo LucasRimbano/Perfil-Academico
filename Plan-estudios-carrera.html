@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Metadatos básicos -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Perfil Académico y Plan de Estudios</title>
+
+  <!-- Enlace a CSS externo -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="images/favicon.ico" />
 
-  <!--css-->
+  <!-- Estilos internos -->
   <style>
+    /* --- Estilo general del body --- */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f5f5f5;
       padding: 20px;
     }
-     /*container datos*/
+
+    /* --- Contenedor de perfil --- */
     .profile-container {
       background: #fff;
       padding: 2rem;
@@ -27,34 +32,36 @@
       text-align: center;
     }
 
+    /* --- Estilo del logo UNSAM --- */
     .profile-container img.logo {
       width: 80px;
       margin-bottom: 1rem;
     }
 
+    /* --- Título perfil --- */
     .profile-container h1 {
       margin-bottom: 1.5rem;
       font-size: 1.8rem;
       color: #333;
     }
 
+    /* --- Información del perfil (Nombre, DNI, etc) --- */
     .profile-info {
       text-align: left;
       margin-bottom: 1rem;
     }
-
     .profile-info label {
       font-weight: bold;
       display: inline-block;
       width: 130px;
     }
-
     .profile-info span {
       color: #555;
     }
 
-    #btn-logout {
-      margin-top: 1.5rem;
+    /* --- Botones guardar y logout --- */
+    #btn-logout, #guardar-tabla {
+      margin-top: 1rem;
       padding: 0.6rem 1.2rem;
       border: none;
       background: #0078d4;
@@ -62,12 +69,13 @@
       border-radius: 4px;
       cursor: pointer;
       transition: background 0.2s;
+      margin-right: 10px;
     }
-
-    #btn-logout:hover {
+    #btn-logout:hover, #guardar-tabla:hover {
       background: #005a9e;
     }
-    /*tabla plan estudios*/
+
+    /* --- Contenedor principal de plan de estudios y notas --- */
     .plan-container {
       margin-top: -30px;
       display: flex;
@@ -80,7 +88,7 @@
       margin-right: auto;
     }
 
-
+    /* --- Paneles laterales (tabla y carga de notas) --- */
     .panel-inferior, .right-panel {
       background: #fff;
       padding: 20px;
@@ -92,54 +100,50 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
+    /* --- Scroll personalizado para panel inferior --- */
     .panel-inferior::-webkit-scrollbar {
       width: 8px;
     }
-    
     .panel-inferior::-webkit-scrollbar-track {
       background: #f1f1f1;
       border-radius: 10px;
     }
-    
     .panel-inferior::-webkit-scrollbar-thumb {
       background: #888;
       border-radius: 10px;
     }
-    
     .panel-inferior::-webkit-scrollbar-thumb:hover {
       background: #555;
     }
-
+    .imgipiepag {
+      z-index: -1;
+    }
+    /* --- Estilo general de tablas --- */
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 14px;
+      table-layout: fixed;
     }
 
     th, td {
       padding: 8px;
       border: 1px solid #ccc;
-      text-align: left;
+      text-align: center;
     }
 
     th {
       background-color: #e6f0ff;
     }
-    td input[type="number"],
-    td select[name="correlativas"] {
-      display: block;
-      margin: 0 auto;
+
+    /* --- Inputs y selects dentro de celdas --- */
+    td input[type="text"], td select {
+      width: 100%;
+      padding: 4px;
       text-align: center;
     }
-    
-    /*lineas de la tabla */
-    input[type="text"], select {
-      width: 100%;
-      padding: 5px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
 
+    /* --- Responsividad para pantallas chicas --- */
     @media (max-width: 768px) {
       .panel-inferior, .right-panel {
         width: 100%;
@@ -149,58 +153,49 @@
 </head>
 <body>
 
-  <!-- Perfil Académico -->
+  <!-- Perfil Académico del usuario -->
   <div class="profile-container">
     <img src="images/unsampng.png" alt="Logo UNSAM" class="logo" />
     <h1>Perfil Académico</h1>
 
-    <div class="profile-info">
-      <label>Nombre y Apellido:</label>
-      <span id="perfil-nombre"></span>
-    </div>
+    <!-- Datos del usuario cargados desde localStorage -->
+    <div class="profile-info"><label>Nombre y Apellido:</label><span id="perfil-nombre"></span></div>
+    <div class="profile-info"><label>DNI:</label><span id="perfil-dni"></span></div>
+    <div class="profile-info"><label>Email:</label><span id="perfil-email"></span></div>
+    <div class="profile-info"><label>Carrera:</label><span id="perfil-carrera"></span></div>
 
-    <div class="profile-info">
-      <label>DNI:</label>
-      <span id="perfil-dni"></span>
-    </div>
-
-    <div class="profile-info">
-      <label>Email:</label>
-      <span id="perfil-email"></span>
-    </div>
-
-    <div class="profile-info">
-      <label>Carrera:</label>
-      <span id="perfil-carrera"></span>
-    </div>
-
+    <!-- Botones para cerrar sesión y guardar la tabla -->
     <button id="btn-logout">Cerrar sesión</button>
+    <button id="guardar-tabla">Guardar Tabla</button>
   </div>
 
-  <!-- Plan de Estudios -->
+  <!-- Plan de Estudios + Panel de Notas -->
   <div class="plan-container">
+
+    <!-- Panel principal: tabla editable de materias -->
     <div class="panel-inferior">
       <h2>Plan de Estudios</h2>
       <table id="editable-table">
         <thead>
           <tr>
-            <th>Actividad</th>
-            <th>Tipo</th>
-            <th>Año</th>
-            <th>Periodo</th>
-            <th>Nota</th>
-            <th>Origen</th>
-            <th>Correlativas</th>
+            <!-- Definición de columnas con anchos específicos -->
+            <th style="width: 250px;">Actividad</th>
+            <th style="width: 70px;">Tipo</th>
+            <th style="width: 45px; text-align: center;">Año</th>
+            <th style="width: 100px;">Periodo</th>
+            <th style="width: 45px; text-align: center;">Nota</th>
+            <th style="width: 120px;">Origen</th>
+            <th style="width: 90px;">Correlativas</th>
           </tr>
         </thead>
-
         <tbody>
-          <!-- Se llena con JS -->
+          <!-- Se completa dinámicamente con JavaScript -->
         </tbody>
       </table>
     </div>
-      <!--table right-->
-     <div class="right-panel">
+
+    <!-- Panel lateral derecho: tabla secundaria de notas -->
+    <!--<div class="right-panel">
       <h2>Cargar Notas - Tu Carrera</h2>
       <table id="editable-table">
         <thead>
@@ -211,102 +206,144 @@
             <th>Nota</th>
           </tr>
         </thead>
-        <tbody>
-          <!-- Se llena con JS -->
-        </tbody>
+        <tbody>-->
+          <!-- También se completa con JS si se implementa -->
+       <!--</tbody> -->
       </table>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- Scripts para lógica dinámica -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Obtener datos del usuario desde localStorage
       const profileJSON = localStorage.getItem('userProfile');
       if (!profileJSON) return;
 
       const { name, dni, email, carrera } = JSON.parse(profileJSON);
 
-      // Mostrar perfil
+      // Mostrar datos en el DOM
       document.getElementById('perfil-nombre').textContent = name;
       document.getElementById('perfil-dni').textContent = dni;
       document.getElementById('perfil-email').textContent = email;
       document.getElementById('perfil-carrera').textContent = carrera;
 
-      // Plan de estudios
+      // Materias según carrera (diccionario)
       const materiasPorCarrera = {
-  "Programacion Informatica": [
-    { actividad: "MATEMÁTICA I (MA-1C10071)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
-    { actividad: "LABORATORIO DE COMPUTACIÓN I (MA-1C50051)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
-    { actividad: "ELECTRICIDAD Y MAGNETISMO (MA-1C20071)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
-    { actividad: "LABORATORIO DE COMPUTACIÓN II (MA-1C50052)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
-    { actividad: "SISTEMAS DE PROCESAMIENTO DE DATOS (MA-1C50053)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre" },
-    { actividad: "MATEMÁTICA II (MA-1C10072)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre" },
-    { actividad: "ALGORITMOS I (MA-1C5AL54)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre" },
-    { actividad: "MATEMÁTICA III (MA-1C50055)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre" },
-    { actividad: "CONCEPTOS DE ARQUITECTURAS Y SISTEMAS OPERATIVOS (MA-1C50056)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre" },
-    { actividad: "ALGORITMOS II (MA-1AQ0010)", tipo: "Materia", año: 2, periodo: ". Cuatrimestre" },
-    { actividad: "REDES LOCALES (MA-1AQ0011)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre" },
-    { actividad: "MÉTODOS NUMÉRICOS (MA-1AQ0012)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre" },
-    { actividad: "ALGORITMOS III (MA-1AQ0013)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre" },
-    { actividad: "BASES DE DATOS (MA-1AQ0014)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre" },
-    { actividad: "SEMINARIO DE PROGRAMACIÓN CONCURRENTE, PARALELA Y DISTRIBUIDA (MA-1AQ0015)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre" },
-    { actividad: "PROGRAMACIÓN CON HERRAMIENTAS MODERNAS (MA-1AQ0016)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" },
-    { actividad: "PROYECTOS DE SOFTWARE (MA-1AQ0017)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" },
-    { actividad: "PARADIGMAS DE PROGRAMACIÓN (MA-1AQ0040)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" }
-  ],
-  "Diseño": [
-    { actividad: "DISEÑO I", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
-    { actividad: "DISEÑO II", tipo: "Materia", año: 2, periodo: ". Cuatrimestre" }
-  ]
-};
+        "Programacion Informatica": [
+          { actividad: "MATEMÁTICA I (MA-1C10071)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
+          { actividad: "LABORATORIO DE COMPUTACIÓN I (MA-1C50051)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
+          { actividad: "ELECTRICIDAD Y MAGNETISMO (MA-1C20071)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
+          { actividad: "LABORATORIO DE COMPUTACIÓN II (MA-1C50052)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre" },
+          { actividad: "SISTEMAS DE PROCESAMIENTO DE DATOS (MA-1C50053)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre" },
+          { actividad: "MATEMÁTICA II (MA-1C10072)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre" },
+          { actividad: "ALGORITMOS I (MA-1C5AL54)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre" },
+          { actividad: "MATEMÁTICA III (MA-1C50055)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre" },
+          { actividad: "CONCEPTOS DE ARQUITECTURAS Y SISTEMAS OPERATIVOS (MA-1C50056)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre" },
+          { actividad: "ALGORITMOS II (MA-1AQ0010)", tipo: "Materia", año: 2, periodo: ". Cuatrimestre" },
+          { actividad: "REDES LOCALES (MA-1AQ0011)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre" },
+          { actividad: "MÉTODOS NUMÉRICOS (MA-1AQ0012)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre" },
+          { actividad: "ALGORITMOS III (MA-1AQ0013)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre" },
+          { actividad: "BASES DE DATOS (MA-1AQ0014)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre" },
+          { actividad: "SEMINARIO DE PROGRAMACIÓN CONCURRENTE, PARALELA Y DISTRIBUIDA (MA-1AQ0015)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre" },
+          { actividad: "PROGRAMACIÓN CON HERRAMIENTAS MODERNAS (MA-1AQ0016)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" },
+          { actividad:"PROYECTOS DE SOFTWARE (MA-1AQ0017)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" },
+          { actividad: "PARADIGMAS DE PROGRAMACIÓN (MA-1AQ0040)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" }
+        ],
+        "Diseño": [
+          // Lista de materias para Diseño...
+        ]
+      };
 
-      
-
+      // Cargar materias
       const materias = materiasPorCarrera[carrera] || [];
       const tbody = document.querySelector("#editable-table tbody");
+      const key = `tablaData_${dni}`;
+      const tablaGuardada = JSON.parse(localStorage.getItem(key)) || [];
 
       if (materias.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="5">No se encontraron materias para la carrera: ${carrera || "No definida"}</td></tr>`;
+        // Si no hay materias definidas para esa carrera
+        tbody.innerHTML = `<tr><td colspan="7">No se encontraron materias para la carrera: ${carrera || "No definida"}</td></tr>`;
+      } else {
+        tbody.innerHTML = ""; // Limpiar tabla antes de llenar
+
+        materias.forEach((materia, index) => {
+          const dataGuardada = tablaGuardada[index] || {};
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${materia.actividad}</td>
+            <td>${materia.tipo}</td>
+            <td>${materia.año}</td>
+            <td>${materia.periodo}</td>
+            <td><input type="text" name="nota" value="${dataGuardada.nota || ''}"></td>
+            <td>
+              <select name="origen">
+                <option value="" ${!dataGuardada.origen ? 'selected' : ''}></option>
+                <option value="Regularidad" ${dataGuardada.origen === 'Regularidad' ? 'selected' : ''}>Regularidad</option>
+                <option value="Promoción" ${dataGuardada.origen === 'Promoción' ? 'selected' : ''}>Promoción</option>
+              </select>
+            </td>
+            <td>
+              <select name="correlativas">
+                <option value="" ${!dataGuardada.correlativa ? 'selected' : ''}></option>
+                <option value="Sí" ${dataGuardada.correlativa === 'Sí' ? 'selected' : ''}>Sí</option>
+                <option value="No" ${dataGuardada.correlativa === 'No' ? 'selected' : ''}>No</option>
+              </select>
+            </td>
+          `;
+          tbody.appendChild(row);
+        });
+      }
+    });
+
+    // Botón guardar tabla (guarda datos en localStorage por DNI)
+    document.getElementById('guardar-tabla')?.addEventListener('click', () => {
+      const profileJSON = localStorage.getItem('userProfile');
+      if (!profileJSON) {
+        alert("No hay usuario registrado.");
         return;
       }
 
-      materias.forEach(materia => {
-        const row = document.createElement("tr");
-        row.innerHTML = ` 
-          <td>${materia.actividad}</td>
-          <td>${materia.tipo}</td>
-          <td>${materia.año}</td>
-          <td>${materia.periodo}</td>
-          <td><input type="text" name="nota" placeholder="" style="width: 50px;"></td>
-          <td>
-            <select name="origen" style="width: 105px;">
-              <option value=""></option>
-              <option value="Regularidad">Regularidad</option>
-              <option value="Promoción">Promoción</option>
-            </select>
-          </td> 
-          <td>
-            <select name="correlativas">
-               <option value=""></option>
-               <option value="Sí">Sí</option>
-               <option value="No">No</option>
-            </select>
-          </td>`;
-           
-        tbody.appendChild(row);
+      const { dni } = JSON.parse(profileJSON);
+      const key = `tablaData_${dni}`;
+      const rows = document.querySelectorAll('#editable-table tbody tr');
+      const tablaData = [];
+
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        tablaData.push({
+          actividad: cells[0].textContent,
+          tipo: cells[1].textContent,
+          año: cells[2].textContent,
+          periodo: cells[3].textContent,
+          nota: cells[4].querySelector('input')?.value || '',
+          origen: cells[5].querySelector('select')?.value || '',
+          correlativa: cells[6].querySelector('select')?.value || ''
+        });
       });
+
+      localStorage.setItem(key, JSON.stringify(tablaData));
+      alert("¡Datos guardados correctamente!");
     });
 
-    // Botón cerrar sesión
+    // Botón cerrar sesión (borra perfil y redirige)
     document.getElementById('btn-logout')?.addEventListener('click', () => {
       localStorage.removeItem('userProfile');
       window.location.href = 'index.html';
     });
   </script>
+
+  <!-- Pie de página -->
+  <div>
+    <footer class="footer">
+      <img class="imgipiepag" src="images/pie-siluetas-recortada.png" alt="">
+    </footer>
+  </div>
   <div>
     <footer class="footer">
       <p>© Universidad Nacional de San Martín - 2025. Todos los derechos reservados. Desarrollado por Lucas Rimbano y Lucas Barcos.</p>
     </footer>
   </div>
+
 </body>
 </html>
