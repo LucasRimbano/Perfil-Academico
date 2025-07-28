@@ -273,7 +273,430 @@
           { actividad: "Redes de Información III", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128 },
           { actividad: "Sistemas Avanzados de Comunicación", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128 },
           { actividad: "Proyecto III", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 6, totalHoras: 96 }
-        ]
+        ],
+        "Diagnostico por Imagen": [
+          { actividad: "Física I (T0001)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre", horasSem: 7, totalHoras: 112, correlativas: ["CPU COMPLETO"] },
+          { actividad: "Matemáticas I (T0002)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96 },
+          { actividad: "Anatomía y Fisiología I (T0003)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: ["CPU COMPLETO"] },
+          { actividad: "Introducción a la Computación (T0004)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre", horasSem: 5, totalHoras: 80 },
+         
+          { actividad: "Física II (T0005)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre", horasSem: 7, totalHoras: 112, correlativas: ["T0001", "T0002"] },
+          { actividad: "Matemáticas II (T0006)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: ["T0002"] },
+          { actividad: "Anatomía y Fisiología II (T0007)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["T0003"] },
+          { actividad: "Lenguajes de Programación (T0101)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["T0002", "T0004"] },
+         
+          { actividad: "Práctica Hospitalaria I (T0102)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: ["T0007"] },
+          { actividad: "Física III (T0103)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 7, totalHoras: 112, correlativas: ["T0005", "T0006"] },
+          { actividad: "Tecnología de las Imágenes I (T0104)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["T0004", "T0005", "T0006"] },
+          { actividad: "Enfermería y Ergometría (T0105)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["T0007"] },
+          { actividad: "Procesamiento Digital de Imágenes (T0106)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: ["T0004", "T0006"] },
+         
+          { actividad: "Probabilidad y Estadística (T0015)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: ["T0002", "T0006"] },
+          { actividad: "Radioprotección (T0019)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: ["T0103"] },
+          { actividad: "Práctica Hospitalaria II (T0107)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: ["T0102", "T0103", "T0104", "T0105", "T0106"] },
+          { actividad: "Tecnología de las Imágenes II (TAC) (T0108)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["T0102", "T0103", "T0104", "T0106"] },
+         
+          { actividad: "Ética y Deontología (T0014)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre", horasSem: 2, totalHoras: 32, correlativas: ["T0105"] },
+          { actividad: "Tecnología de las Imágenes III (MN) (T0111)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["T0019", "T0107", "T0108"] },
+          { actividad: "Radioquímica (T0112)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: ["T0019"] },
+          { actividad: "Práctica Hospitalaria III (MN) (T0113)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: ["T0019", "T0107", "T0108"] },
+          { actividad: "Proyecto Final Integrador (T0110)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["T0019", "T0107", "T0108", "T0101"] },
+         
+          { actividad: "Imagenología Clínica (T0114)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["T0113", "T0007"] },
+          { actividad: "Tecnología de las Imágenes IV (RMN) (T0115)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["T0111", "T0113"] },
+          { actividad: "Servicios de Imágenes IV (RMN) (T0116)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: ["T0113"] },
+          { actividad: "Proyecto Final Integrador (T0110)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 9, totalHoras: 144, correlativas: ["T0019", "T0107", "T0108", "T0101"] }
+        ],
+        "Ciencia de Datos":
+        [
+          // Cuatrimestre 1
+          { actividad: "Análisis I (N1)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre", horasSem: 8, totalHoras: 128, creditos: 8 },
+          { actividad: "Introducción a la Ciencia de Datos (CD01)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6 },
+          { actividad: "Programación I (CD02)", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6 },
+          
+          // Cuatrimestre 2
+          { actividad: "Análisis II (N10)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128, creditos: 8, correlativas: ["N1"] },
+          { actividad: "Matemática Discreta (CD03)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128, creditos: 8, correlativas: ["N1"] },
+          { actividad: "Introducción al Aprendizaje Automático (CD04)", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6, correlativas: ["N1", "CD01", "CD02"] },
+          
+          // Cuatrimestre 3
+          { actividad: "Infraestructura para Ciencia de Datos (CD05)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6, correlativas: ["CD02"] },
+          { actividad: "Algoritmos I (TPI07)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 10, totalHoras: 160, creditos: 10, correlativas: ["N1"] },
+          { actividad: "Probabilidad y Estadística (CB34)", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, correlativas: ["N10"] },
+          
+          // Cuatrimestre 4
+          { actividad: "Estadística e Inferencia I (CD06)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128, creditos: 8, correlativas: ["CB34", "CD03"] },
+          { actividad: "Algoritmos II (TPI10)", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre", horasSem: 9, totalHoras: 144, creditos: 9, correlativas: ["N10", "CD03", "TPI07"] },
+          { actividad: "Electiva 1", tipo: "Electiva", año: 2, periodo: "2do. Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4 },
+          
+          // Cuatrimestre 5
+          { actividad: "Estadística e Inferencia II (CD07)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre", horasSem: 8, totalHoras: 128, creditos: 8, correlativas: ["CD06"] },
+          { actividad: "Programación II (CD08)", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6, correlativas: ["CD02", "TPI10"] },
+          { actividad: "Electiva 2", tipo: "Electiva", año: 3, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6 },
+          
+          // Cuatrimestre 6
+          { actividad: "Ciencia de Datos (CD09)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128, creditos: 8, correlativas: ["CD07", "CD08"] },
+          { actividad: "Bases de Datos (TPI14)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128, creditos: 8, correlativas: ["TPI10"] },
+          { actividad: "Ingeniería de Software (CD10)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6, correlativas: ["CD08", "TPI10"] },
+          
+          // Cuatrimestre 7
+          { actividad: "Aprendizaje Automático (CD11)", tipo: "Materia", año: 4, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6, correlativas: ["CD07", "CD08"] },
+          { actividad: "Electiva 3", tipo: "Electiva", año: 4, periodo: "1er. Cuatrimestre", horasSem: 8, totalHoras: 128, creditos: 8, correlativas: ["CD09", "CD10"] },
+          { actividad: "Optativa 1", tipo: "Optativa", año: 4, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6 },
+          
+          // Cuatrimestre 8
+          { actividad: "Aprendizaje Profundo (CD12)", tipo: "Materia", año: 4, periodo: "2do. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6, correlativas: ["CD11"] },
+          { actividad: "Optativa 2", tipo: "Optativa", año: 4, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128, creditos: 8, correlativas: ["CD12"] },
+          { actividad: "Optativa 3", tipo: "Optativa", año: 4, periodo: "2do. Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6 }
+        ],
+       "Desarrollo de Software": [
+      // 1er Año - 1er Cuatrimestre
+          { actividad: "Ingeniería de Software I",  tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 26, teoria: 38 },
+          { actividad: "Herramientas Matemáticas",  tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 32, teoria: 32 },
+          { actividad: "Programación I",  tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 38, teoria: 26 },
+          { actividad: "Ingeniería de Requisitos",  tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 26, teoria: 38 },
+          { actividad: "Inglés Técnico",  tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 16, teoria: 48 },
+        
+          // 1er Año - 2do Cuatrimestre
+          { actividad: "Estadística",  tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 34, teoria: 30 },
+          { actividad: "Base de Datos I",  tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 28, teoria: 36 },
+          { actividad: "Programación II",  tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 26, teoria: 38 },
+          { actividad: "Análisis Matemático I", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 32, teoria: 32 },
+          { actividad: "Proyecto Integrador I",  tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 20, teoria: 44 },
+        
+          // 2do Año - 1er Cuatrimestre
+          { actividad: "Probabilidad",  tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 32, teoria: 32 },
+          { actividad: "Diseño de Software",  tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 28, teoria: 36 },
+          { actividad: "Programación III",  tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 16, teoria: 48 },
+          { actividad: "Verificación y Validación de Software",  tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 32, teoria: 32 },
+          { actividad: "Proyecto Integrador II", tipo: "Materia", año: 2, periodo: "Anual", horasSem: 4, totalHoras: 128, creditos: 8, practica: 102, teoria: 26 },
+        
+          // 2do Año - 2do Cuatrimestre
+          { actividad: "Diseño de experiencia de usuario",  tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 28, teoria: 36 },
+          { actividad: "Base de Datos II",  tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 30, teoria: 34 },
+          { actividad: "Análisis de Datos I",  tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 30, teoria: 34 },
+          { actividad: "Desarrollo Seguro",  tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 16, teoria: 48 },
+        
+          // 3er Año - 1er Cuatrimestre
+          { actividad: "Gestión de Proyecto",  tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 32, teoria: 32 },
+          { actividad: "Arquitectura de Aplicaciones", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 28, teoria: 36 },
+          { actividad: "Desarrollo Mobile", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 16, teoria: 48 },
+          { actividad: "Modelado y Automatización de procesos y sistemas",tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 16, teoria: 48 },
+          { actividad: "Proyecto Integrador III", tipo: "Materia", año: 3, periodo: "Anual", horasSem: 4, totalHoras: 128, creditos: 8, practica: 102, teoria: 26 },
+        
+          // 3er Año - 2do Cuatrimestre
+          { actividad: "Paradigmas y tecnologías modernas", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 16, teoria: 48 },
+          { actividad: "Simulación",tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 30, teoria: 34 },
+          { actividad: "Integración y explotación de datos", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, creditos: 6, practica: 48, teoria: 48 },
+        
+          // 4to Año - 1er Cuatrimestre
+          { actividad: "Definición de productos y servicios", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 16, teoria: 48 },
+          { actividad: "Administración de Infraestructura", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 30, teoria: 34 },
+          { actividad: "Inteligencia Artificial", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 32, teoria: 32 },
+          { actividad: "Proyecto Integrador IV", tipo: "Materia", año: 4, periodo: "Anual", horasSem: 4, totalHoras: 128, creditos: 8, practica: 102, teoria: 26 },
+        
+          // 4to Año - 2do Cuatrimestre
+          { actividad: "Procesos Productivos", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 16, teoria: 48 },
+          { actividad: "Emprendedorismo y nuevos desarrollos", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 16, teoria: 48 },
+          { actividad: "Modelos de calidad de Software", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, creditos: 4, practica: 16, teoria: 48 }
+],
+
+         "Transporte": [
+         // Cuatrimestre 1
+          { actividad: "Introducción al Análisis Matemático", codigo: "CB01", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+          { actividad: "Ciencia, Tecnología y Sociedad", codigo: "CB02", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+          { actividad: "Química General", codigo: "CB03", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+          { actividad: "Introducción a la Informática", codigo: "CB36", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+        
+          // Cuatrimestre 2
+          { actividad: "Cálculo I", codigo: "CB05", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB01"] },
+          { actividad: "Álgebra y Geometría Analítica I", codigo: "CB06", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB01"] },
+          { actividad: "Física I", codigo: "CB10", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB01"] },
+          { actividad: "Introducción al Transporte", codigo: "ITR01", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+        
+          // Cuatrimestre 3
+          { actividad: "Cálculo II", codigo: "CB09", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB05"] },
+          { actividad: "Física II", codigo: "CB13", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB10"] },
+          { actividad: "Sistemas de Representación Gráfica", codigo: "CB37", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB36"] },
+          { actividad: "Álgebra y Geometría Analítica II", codigo: "CB28", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB06"] },
+        
+          // Cuatrimestre 4
+          { actividad: "Probabilidad y Estadística", codigo: "CB34", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB09"] },
+          { actividad: "Física III", codigo: "CB15", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB13"] },
+          { actividad: "Cálculo Avanzado", codigo: "CB33", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB09"] },
+          { actividad: "Sistemas de Transporte", codigo: "ITR02", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["ITR01", "CB13"] },
+        
+          // Cuatrimestre 5
+          { actividad: "Métodos Numéricos", codigo: "CB35", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB09", "CB28"] },
+          { actividad: "Higiene y Seguridad Ambiental y Laboral", codigo: "CMP01", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR13"] },
+          { actividad: "Estadística Técnica", codigo: "IND05", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB34"] },
+          { actividad: "Materiales", codigo: "IND03", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB13"] },
+          { actividad: "Fundamentos y Demandas de Transporte Urbano", codigo: "ITR03", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR02"] },
+        
+          // Cuatrimestre 6
+          { actividad: "Termodinámica", codigo: "ERG15", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB15"] },
+          { actividad: "Mecánica de los Fluidos", codigo: "ERG16", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB15"] },
+          { actividad: "Estática y Resistencia de Materiales", codigo: "IND02", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB09", "CB10"] },
+          { actividad: "Sistemas Inteligentes y Tecnología de la Comunicación en el Transporte", codigo: "ITR04", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["ITR02", "CB34"] },
+          // Cuatrimestre 7
+          { actividad: "Electrónica Analógica", codigo: "ELE22", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB15"] },
+          { actividad: "Transporte Carretero", codigo: "ITR05", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR04"] },
+          { actividad: "Transporte Ferroviario", codigo: "ITR06", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR04"] },
+          { actividad: "Transporte Marítimo y Fluvial", codigo: "ITR07", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR04"] },
+          { actividad: "Transporte Aéreo", codigo: "ITR08", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR04"] },
+        
+          // Cuatrimestre 8
+          { actividad: "Métodos Cuantitativos aplicados al transporte", codigo: "ITR09", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["IND05", "ITR04"] },
+          { actividad: "Tecnología Vehicular", codigo: "ITR10", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["IND02", "ITR04", "ELE07"] },
+          { actividad: "Movilidad Urbana", codigo: "ITR11", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR03", "ITR04"] },
+          { actividad: "Logística y Cadena de Abastecimiento", codigo: "ITR12", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR05", "ITR06", "ITR07", "ITR08"] },
+          { actividad: "Legislación y Regulación del Transporte", codigo: "ITR13", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR03", "ITR04"] },
+        
+          // Cuatrimestre 9
+          { actividad: "Investigación Operativa", codigo: "IND19", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["IND05"] },
+          { actividad: "Seguridad en el Transporte", codigo: "ITR15", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR13"] },
+          { actividad: "Logística Internacional", codigo: "ITR16", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR12"] },
+          { actividad: "Higiene y Seguridad Ambiental y Laboral", codigo: "CMP01", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR13"] },
+          { actividad: "Ingeniería de Tránsito", codigo: "ITR17", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["ITR11", "ITR09"] },
+        
+          // Cuatrimestre 10
+          { actividad: "Transporte, Estado y Políticas Públicas", codigo: "ITR18", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR13", "ITR11", "ITR09"] },
+          { actividad: "Electiva I", codigo: "ITR14", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["Según corresponda"] },
+          { actividad: "Gestión y Evaluación de Proyectos de Transporte", codigo: "ITR19", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR09", "ITR11", "ITR12"] },
+          { actividad: "Práctica Profesional Supervisada", codigo: "ITR20", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 12.5, totalHoras: 200, correlativas: ["ITR17", "CMP06", "ITR11", "ITR13"] },
+        
+          // Cuatrimestre 11
+          { actividad: "Transporte, Energía y Medio Ambiente", codigo: "ITR21", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ITR09", "ITR11"] },
+          { actividad: "Electiva II", codigo: "ITR22", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["Según corresponda"] },
+          { actividad: "Proyecto Final Integrador", codigo: "ITR23", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 12.5, totalHoras: 200, correlativas: ["ITR13"] }
+        ],
+
+         "Biotecnologia" : [
+          // Primer Año – 1er Cuatrimestre
+          { actividad: "Análisis I", codigo: "N1", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+          { actividad: "Ciencia, Tecnología y Sociedad", codigo: "CB02", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+          { actividad: "Química General", codigo: "CB03", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+          { actividad: "Biología I", codigo: "CB04", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+        
+          // Primer Año – 2do Cuatrimestre
+          { actividad: "Introducción a la Biotecnología", codigo: "N2", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: ["CB04", "CB02"] },
+          { actividad: "Álgebra y Geometría Analítica", codigo: "CB06", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: [] },
+          { actividad: "Biología II", codigo: "CB07", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB03", "CB04"] },
+          { actividad: "Química Inorgánica", codigo: "CB08", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["N1", "CB03"] },
+        
+          // Segundo Año – 1er Cuatrimestre
+          { actividad: "Química Orgánica", codigo: "CB12", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB08"] },
+          { actividad: "Análisis II", codigo: "N10", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["N1"] },
+          { actividad: "Física I", codigo: "CB10", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["N1"] },
+        
+          // Segundo Año – 2do Cuatrimestre
+          { actividad: "Física II", codigo: "N3", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["N10", "CB10"] },
+          { actividad: "Biología III", codigo: "CB11", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB07"] },
+          { actividad: "Estadística Aplicada", codigo: "CB14", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["N1", "CB06"] },
+          { actividad: "Química Biológica I", codigo: "N4", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB07", "CB12"] },
+        
+          // Tercer Año – 1er Cuatrimestre
+          { actividad: "Fisicoquímica", codigo: "CB16", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB08", "N3"] },
+          { actividad: "Genética General", codigo: "CB17", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB07", "CB14", "N4"] },
+          { actividad: "Química Biológica II", codigo: "N5", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["N4"] },
+          { actividad: "Biología IV", codigo: "CB19", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: ["CB07", "CB12"] },
+        
+          // Tercer Año – 2do Cuatrimestre
+          { actividad: "Microbiología", codigo: "N11", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 12, totalHoras: 192, correlativas: ["N2", "N5", "CB17"] },
+          { actividad: "Biología Celular", codigo: "CB22", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["N5", "CB11"] },
+          { actividad: "Introducción a la Bioinformática", codigo: "N7", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB14", "CB07"] },
+        
+          // Cuarto Año – 1er Cuatrimestre
+          { actividad: "Inmunología Básica", codigo: "CB23", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["N5", "CB17"] },
+          { actividad: "Genética Molecular", codigo: "N12", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 14, totalHoras: 224, correlativas: ["CB17", "N11", "CB22"] },
+          { actividad: "Química Analítica", codigo: "N6", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 6.5, totalHoras: 104, correlativas: ["CB12", "CB14", "CB16"] },
+        
+          // Cuarto Año – 2do Cuatrimestre
+          { actividad: "Inmunología Molecular", codigo: "00157", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB23", "N12"] },
+          { actividad: "Biotecnología Animal", codigo: "00162", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["N12"] },
+          { actividad: "Bioquímica de Proteínas", codigo: "00155", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["N5", "N6", "CB16"] },
+        
+          // Quinto Año – 1er Cuatrimestre
+          { actividad: "Biotecnología Vegetal", codigo: "00159", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB19", "N7", "N12"] },
+          { actividad: "Bioprocesos", codigo: "N8", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 9, totalHoras: 144, correlativas: ["N11", "N12", "CB16"] },
+          { actividad: "Métodos de Análisis de Biomoléculas", codigo: "N13", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["N6", "00157", "N7"] },
+        
+          
+          // Quinto Año – 1er Cuatrimestre
+          { actividad: "Biotecnología Vegetal", codigo: "00159", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB19", "N7", "N12"] },
+          { actividad: "Bioprocesos", codigo: "N8", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 9, totalHoras: 144, correlativas: ["N11", "N12", "CB16"] },
+          { actividad: "Métodos de Análisis de Biomoléculas", codigo: "N13", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["N6", "00157", "N7"] },
+        
+          // Quinto Año – 2do Cuatrimestre
+          { actividad: "Proyectos Biotecnológicos", codigo: "N9", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["N13", "N8", "00159", "00162", "N7"] }
+],
+           "Sistemas Espaciales" : [
+          // Primer Año – 1er Cuatrimestre
+          { actividad: "Introducción a la ingeniería de sistemas espaciales", codigo: "ISE01", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: [] },
+          { actividad: "Física espacial", codigo: "ISE02", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Teoría de circuitos", codigo: "ISE03", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Programación", codigo: "ISE04", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+        
+          // Primer Año – 2do Cuatrimestre
+          { actividad: "Proyecto integrador 1", codigo: "ISE05", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: [] },
+          { actividad: "Termodinámica", codigo: "ISE06", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Ciencia de materiales", codigo: "ISE07", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Astrodinámica", codigo: "ISE08", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+        
+          // Segundo Año – 1er Cuatrimestre
+          { actividad: "Proyecto integrador 2", codigo: "ISE09", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: [] },
+          { actividad: "Circuitos electrónicos", codigo: "ISE10", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Introducción a estructuras y resistencia de materiales", codigo: "ISE11", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Control térmico de vehículos espaciales", codigo: "ISE12", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+        
+          // Segundo Año – 2do Cuatrimestre
+          { actividad: "Proyecto integrador 3.1", codigo: "ISE13", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: [] },
+          { actividad: "Manufacturas avanzadas", codigo: "ISE14", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Telecomunicaciones espaciales", codigo: "ISE15", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Mecánica de fluidos", codigo: "ISE16", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+        
+          // Tercer Año – 1er Cuatrimestre
+          { actividad: "Proyecto integrador 3.2", codigo: "ISE17", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: [] },
+          { actividad: "Estructuras espaciales", codigo: "ISE18", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Aerodinámica", codigo: "ISE19", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Arquitectura de sistemas", codigo: "ISE20", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+        
+          // Tercer Año – 2do Cuatrimestre
+          { actividad: "Proyecto integrador 4.1", codigo: "ISE21", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: [] },
+          { actividad: "Ambiente espacial", codigo: "ISE22", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Introducción al Control moderno", codigo: "ISE23", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Ingeniería de productos de la observación de la Tierra", codigo: "ISE24", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+        
+          // Cuarto Año – 1er Cuatrimestre
+          { actividad: "Proyecto integrador 4.2", codigo: "ISE25", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 10, totalHoras: 160, correlativas: [] },
+          { actividad: "Modelado y simulación de vehículos espaciales", codigo: "ISE26", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Sensores remotos", codigo: "ISE27", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Sistemas de potencia", codigo: "ISE28", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+        
+          // Cuarto Año – 2do Cuatrimestre
+          { actividad: "Derecho, Política y Economía Espacial", codigo: "ISE29", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Propulsión", codigo: "ISE30", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Higiene y seguridad ambiental y laboral", codigo: "CMP01", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+          { actividad: "Aviónica de sistemas espaciales", codigo: "ISE31", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 5, totalHoras: 80, correlativas: [] },
+          { actividad: "Práctica profesional supervisada", codigo: "ISE32", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 12, totalHoras: 192, correlativas: [] }
+] ,
+   "Ingenieria Ambiental" : [
+  // Primer Año – 1er Cuatrimestre
+  { actividad: "Introducción al Análisis Matemático", codigo: "CB01", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+  { actividad: "Ciencia, Tecnología y Sociedad", codigo: "CB02", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+  { actividad: "Química General", codigo: "CB03", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+  { actividad: "Biología I", codigo: "CB04", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+
+  // Primer Año – 2do Cuatrimestre
+  { actividad: "Cálculo I", codigo: "CB05", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB01"] },
+  { actividad: "Álgebra y Geometría Analítica", codigo: "CB06", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB01"] },
+  { actividad: "Química Inorgánica", codigo: "CB08", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB01", "CB03"] },
+  { actividad: "Sistemas de Representación Gráfica", codigo: "CB37", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+
+  // Segundo Año – 1er Cuatrimestre
+  { actividad: "Cálculo II", codigo: "CB09", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB05", "CB06"] },
+  { actividad: "Física I", codigo: "CB10", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB01"] },
+  { actividad: "Biología II", codigo: "CB43", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB03", "CB04"] },
+  { actividad: "Informática", codigo: "CB29", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+
+  // Segundo Año – 2do Cuatrimestre
+  { actividad: "Química Orgánica", codigo: "CB12", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB08"] },
+  { actividad: "Geología General", codigo: "AMB16", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB08"] },
+  { actividad: "Física II A", codigo: "CB13A", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB05", "CB10"] },
+  { actividad: "Física III", codigo: "CB15", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB09", "CB10"] },
+
+  // Tercer Año – 1er Cuatrimestre
+  { actividad: "Microbiología Ambiental", codigo: "AMB02", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB12", "CB43"] },
+  { actividad: "Cálculo Avanzado", codigo: "CB33", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB06", "CB09"] },
+  { actividad: "Física IV", codigo: "CB31", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB13A", "CB15"] },
+  { actividad: "Fisicoquímica", codigo: "CB16", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB08", "CB09"] },
+
+  // Tercer Año – 2do Cuatrimestre
+  { actividad: "Ecología", codigo: "CB25", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["AMB02", "AMB16"] },
+  { actividad: "Estadística Aplicada", codigo: "CB14", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB05", "CB29"] },
+  { actividad: "Química Analítica", codigo: "CB26", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB12", "CB16"] },
+  { actividad: "Fenómenos de Transporte", codigo: "AMB04", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB16", "CB33"] },
+
+  // Cuarto Año – 1er Cuatrimestre
+  { actividad: "Contaminación Atmosférica", codigo: "AMB03", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB14", "AMB04"] },
+  { actividad: "Normativa Ambiental", codigo: "AMB18", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB02", "AMB02"] },
+  { actividad: "Contaminación de Aguas y Suelos", codigo: "AMB09", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["AMB02", "AMB04"] },
+  { actividad: "Bioprocesos", codigo: "AMB06", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["AMB02", "CB16"] },
+
+  // Cuarto Año – 2do Cuatrimestre
+  { actividad: "Taller Ambiental I", codigo: "AMB07", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB14", "CB25", "CB26"] },
+  { actividad: "Procesos Fisicoquímicos en Ingeniería Ambiental", codigo: "AMB17", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB37", "AMB04", "AMB06"] },
+  { actividad: "Toxicología Ambiental", codigo: "AMB05", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB25", "CB26"] },
+  { actividad: "Higiene y Seguridad Ambiental y Laboral", codigo: "CMP01", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+
+  // Quinto Año – 2do Cuatrimestre
+  { actividad: "Práctica Profesional Supervisada", codigo: "PPIAM", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 12.5, totalHoras: 200, correlativas: ["AMB11", "AMB12", "AMB15", "CMP02"] },
+  { actividad: "Gestión Ambiental", codigo: "AMB19", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["AMB03", "AMB18"] },
+  { actividad: "Residuos Sólidos", codigo: "AMB13", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["AMB09", "AMB17"] },
+  { actividad: "Taller Ambiental II", codigo: "AMB10", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["AMB09", "AMB15", "AMB17"] },
+
+  // Sexto Año – 1er Cuatrimestre
+  { actividad: "Proyecto Final Integrador", codigo: "PFIAM", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 15, totalHoras: 240, correlativas: ["AMB10", "AMB13", "AMB19"] },
+  { actividad: "Electiva III", codigo: "ELECTIVA III", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+  { actividad: "Formulación de Proyectos", codigo: "AMB14", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["AMB12", "CMP02", "AMB19"] }
+],
+
+  "Electronica" : [
+  { actividad: "Introducción al Análisis Matemático", codigo: "CB01", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+  { actividad: "Ciencia, Tecnología y Sociedad", codigo: "CB02", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+  { actividad: "Química General", codigo: "CB03", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+  { actividad: "Introducción a la Informática", codigo: "CB36", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+
+  { actividad: "Cálculo I", codigo: "CB05", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB01"] },
+  { actividad: "Álgebra y Geometría Analítica I", codigo: "CB06", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: [] },
+  { actividad: "Física I", codigo: "CB10", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB01"] },
+  { actividad: "Sistemas de Representación Gráfica", codigo: "CB37", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB36"] },
+
+  { actividad: "Cálculo II", codigo: "CB09", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB05", "CB06"] },
+  { actividad: "Álgebra y Geometría Analítica II", codigo: "CB08", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB06"] },
+  { actividad: "Física II", codigo: "CB13", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB05", "CB10"] },
+  { actividad: "Informática", codigo: "CB29", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB36"] },
+
+  { actividad: "Cálculo III", codigo: "CB30", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB08", "CB09"] },
+  { actividad: "Probabilidad y Estadística", codigo: "CB34", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB09"] },
+  { actividad: "Física III", codigo: "CB15", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB09", "CB13"] },
+  { actividad: "Programación", codigo: "CB39", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB06", "CB29"] },
+
+  { actividad: "Física IV", codigo: "CB31", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB15"] },
+  { actividad: "Medios de Enlace", codigo: "COM01", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB15", "CB30"] },
+  { actividad: "Teoría de Circuitos", codigo: "ELE01", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB09", "CB15"] },
+  { actividad: "Métodos Numéricos", codigo: "CB35", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB08", "CB09"] },
+
+  { actividad: "Dispositivos Electrónicos", codigo: "ELE02", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB15", "ELE01"] },
+  { actividad: "Teoría de las Comunicaciones", codigo: "COM02", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["COM01"] },
+  { actividad: "Análisis y Procesamiento de Señales", codigo: "ELE04", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB34", "CB35", "ELE01"] },
+  { actividad: "Medidas I", codigo: "ELE03", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ELE01"] },
+
+  { actividad: "Electrónica Digital I", codigo: "ELE06", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB39", "ELE02"] },
+  { actividad: "Medidas II", codigo: "ELE05", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ELE02", "ELE03"] },
+  { actividad: "Electrónica Analógica I", codigo: "ELE07", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["ELE02", "ELE04"] },
+  { actividad: "Higiene, Seguridad Ambiental y Laboral", codigo: "CMP01", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB03", "ELE03"] },
+
+  { actividad: "Electrónica Digital II", codigo: "ELE08", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["ELE06"] },
+  { actividad: "Electrotecnia", codigo: "ELE10", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ELE05"] },
+  { actividad: "Electrónica Analógica II", codigo: "ELE09", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["ELE07"] },
+  { actividad: "Sensores y Acondicionadores de Señales", codigo: "ELE11", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ELE05", "ELE06", "ELE07"] },
+
+  { actividad: "Teoría de Control", codigo: "ELE12", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["ELE09", "ELE10"] },
+  { actividad: "Electrónica Digital III", codigo: "ELE13", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ELE08", "ELE11"] },
+  { actividad: "Electiva I", codigo: "Electiva1", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+  { actividad: "Economía", codigo: "CMP05", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CMP01"] },
+
+  // Quinto Año – 2do Cuatrimestre
+  { actividad: "Organización Industrial", codigo: "COM03", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CMP01"] },
+  { actividad: "Electiva II", codigo: "Electiva2", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+  { actividad: "Práctica Profesional Supervisada", codigo: "PPIE", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 12.5, totalHoras: 200, correlativas: ["CMP01", "ELE08", "ELE12"] },
+
+  // Sexto Año – 1er Cuatrimestre
+  { actividad: "Ética y Ejercicio Profesional", codigo: "COM04", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CMP01"] },
+  { actividad: "Electiva III", codigo: "Electiva3", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+  { actividad: "Proyecto Final Integrador", codigo: "PFIE", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 12.5, totalHoras: 200, correlativas: ["ELE11", "ELE12", "ELE13", "CMP05", "COM03"] }
+]
 };
       
 
