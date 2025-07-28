@@ -18,6 +18,10 @@
       font-family: Arial, sans-serif;
       background: #f5f5f5;
       padding: 20px;
+      background-image: url('images/plano.jpg'); 
+       background-repeat: no-repeat;
+      background-size: cover;  
+      background-position: center -50px;  /* Centra la imagen */
     }
 
     /* --- Contenedor de perfil --- */
@@ -25,7 +29,7 @@
       background: #fff;
       padding: 2rem;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgb(0, 217, 255);
       width: 100%;
       max-width: 400px;
       margin: auto;
@@ -95,9 +99,9 @@
       border-radius: 10px;
       width: 100%;
       max-width: 850px;
-      max-height: 400px;
+      max-height: 500px;
       overflow: auto;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgb(0, 217, 255);
     }
 
     /* --- Scroll personalizado para panel inferior --- */
@@ -166,7 +170,7 @@
 
     <!-- Botones para cerrar sesión y guardar la tabla -->
     <button id="btn-logout">Cerrar sesión</button>
-    <button id="guardar-tabla">Guardar Tabla</button>
+    <button id="guardar-tabla">Guardar Cambios</button>
   </div>
 
   <!-- Plan de Estudios + Panel de Notas -->
@@ -250,10 +254,28 @@
           { actividad:"PROYECTOS DE SOFTWARE (MA-1AQ0017)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" },
           { actividad: "PARADIGMAS DE PROGRAMACIÓN (MA-1AQ0040)", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre" }
         ],
-        "Diseño": [
-          // Lista de materias para Diseño...
+        "Redes Informatica": [
+          { actividad: "Matemática I", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96 },
+          { actividad: "Laboratorio de Computación I", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre", horasSem: 8, totalHoras: 128 },
+          { actividad: "Electricidad y Magnetismo", tipo: "Materia", año: 1, periodo: "1er. Cuatrimestre", horasSem: 8, totalHoras: 128 },
+          { actividad: "Laboratorio de Computación II", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128 },
+          { actividad: "Sistemas de Procesamiento de Datos", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128 },
+          { actividad: "Matemática II", tipo: "Materia", año: 1, periodo: "2do. Cuatrimestre", horasSem: 6, totalHoras: 96 },
+          { actividad: "Algoritmos I", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 10, totalHoras: 160 },
+          { actividad: "Matemática III", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96 },
+          { actividad: "Conceptos de Arquitecturas y Sistemas Operativos", tipo: "Materia", año: 2, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96 },
+          { actividad: "Redes de Información I", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128 },
+          { actividad: "Redes Locales", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128 },
+          { actividad: "Proyecto I", tipo: "Materia", año: 2, periodo: "2do. Cuatrimestre", horasSem: 6, totalHoras: 96 },
+          { actividad: "Redes de Información II", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre", horasSem: 8, totalHoras: 128 },
+          { actividad: "Administración de Redes de Computadoras", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre", horasSem: 8, totalHoras: 128 },
+          { actividad: "Proyecto II", tipo: "Materia", año: 3, periodo: "1er. Cuatrimestre", horasSem: 6, totalHoras: 96 },
+          { actividad: "Redes de Información III", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128 },
+          { actividad: "Sistemas Avanzados de Comunicación", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 8, totalHoras: 128 },
+          { actividad: "Proyecto III", tipo: "Materia", año: 3, periodo: "2do. Cuatrimestre", horasSem: 6, totalHoras: 96 }
         ]
-      };
+};
+      
 
       // Cargar materias
       const materias = materiasPorCarrera[carrera] || [];
