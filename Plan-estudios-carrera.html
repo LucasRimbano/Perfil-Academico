@@ -198,21 +198,6 @@
       </table>
     </div>
 
-    <!-- Panel lateral derecho: tabla secundaria de notas -->
-    <!--<div class="right-panel">
-      <h2>Cargar Notas - Tu Carrera</h2>
-      <table id="editable-table">
-        <thead>
-          <tr>
-            <th>Actividad</th>
-            <th>Año</th>
-            <th>Periodo</th>
-            <th>Nota</th>
-          </tr>
-        </thead>
-        <tbody>-->
-          <!-- También se completa con JS si se implementa -->
-       <!--</tbody> -->
       </table>
     </div>
   </div>
@@ -696,7 +681,68 @@
   { actividad: "Ética y Ejercicio Profesional", codigo: "COM04", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CMP01"] },
   { actividad: "Electiva III", codigo: "Electiva3", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
   { actividad: "Proyecto Final Integrador", codigo: "PFIE", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 12.5, totalHoras: 200, correlativas: ["ELE11", "ELE12", "ELE13", "CMP05", "COM03"] }
+] ,
+ "Ingenieria en Energia" : [
+  // Primer Año
+  { actividad: "Introducción al Análisis Matemático", codigo: "CB01", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+  { actividad: "Ciencia, Tecnología y Sociedad", codigo: "CB02", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+  { actividad: "Química General", codigo: "CB03", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+  { actividad: "Introducción a la Informática", codigo: "CB36", tipo: "Materia", año: 1, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: [] },
+  { actividad: "Cálculo I", codigo: "CB05", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB01"] },
+  { actividad: "Álgebra y Geometría Analítica I", codigo: "CB06", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB01"] },
+  { actividad: "Física I", codigo: "CB10", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB01"] },
+  { actividad: "Sistemas de Representación Gráfica", codigo: "CB37", tipo: "Materia", año: 1, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB36"] },
+
+  // Segundo Año
+  { actividad: "Cálculo II", codigo: "CB09", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB05", "CB06"] },
+  { actividad: "Física II", codigo: "CB13", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB05", "CB10"] },
+  { actividad: "Álgebra y Geometría Analítica II", codigo: "CB08", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB06"] },
+  { actividad: "Química Orgánica y Corrosión", codigo: "CB44", tipo: "Materia", año: 2, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB03", "CB10"] },
+  { actividad: "Cálculo Avanzado", codigo: "CB28", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB09", "CB28"] },
+  { actividad: "Probabilidad y Estadística", codigo: "CB34", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB09"] },
+  { actividad: "Física III", codigo: "CB15", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB09", "CB13"] },
+  { actividad: "Estática y Resistencia de Materiales", codigo: "IND02", tipo: "Materia", año: 2, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB05", "CB10"] },
+
+  // Tercer Año
+  { actividad: "Microeconomía", codigo: "CMP05", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB02", "CB09"] },
+  { actividad: "Métodos Numéricos", codigo: "CB33", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: [] },
+  { actividad: "Energía y Medio Ambiente I", codigo: "ERG01", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB03", "CB13"] },
+  { actividad: "Geología y Prospección Petrolera", codigo: "ERG12", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB44"] },
+  { actividad: "Electrotecnia y Máquinas Eléctricas", codigo: "ERG13", tipo: "Materia", año: 3, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["CB15"] },
+  { actividad: "Termodinámica y Máquinas Térmicas", codigo: "ERG15", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB13", "CB33"] },
+  { actividad: "Mecánica de Fluidos y Transferencia de Calor", codigo: "ERG16", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 6, totalHoras: 96, correlativas: ["CB13", "CB33"] },
+  { actividad: "Generación Eléctrica", codigo: "ERG17", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["ERG13"] },
+  { actividad: "Energías Renovables I", codigo: "ERG18", tipo: "Materia", año: 3, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CB15", "ERG01"] },
+
+  // Cuarto Año
+  { actividad: "Higiene y Seguridad Ambiental y Laboral", codigo: "CMP01", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ERG01"] },
+  { actividad: "Tecnologías de Gas y Petróleo", codigo: "ERG19", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["ERG12", "ERG16"] },
+  { actividad: "Formulación y Evaluación de Proyectos", codigo: "CMP08", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ERG01", "CMP05"] },
+  { actividad: "Transporte y Distribución de Electricidad", codigo: "ERG20", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ERG17"] },
+  { actividad: "Política y Gestión Energética", codigo: "ERG21", tipo: "Materia", año: 4, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ERG01", "CMP05"] },
+  { actividad: "Marcos Regulatorios y Legislación Energética", codigo: "CMP09", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ERG01"] },
+  { actividad: "Producción, Transporte y Distribución de Combustibles", codigo: "ERG04", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["ERG19"] },
+  { actividad: "Planeamiento y Organización de Servicios Energéticos", codigo: "ERG06", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["CMP08"] },
+  { actividad: "Ahorro, Eficiencia y Uso Racional de la Energía", codigo: "ERG07", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ERG17"] },
+  { actividad: "Energías Renovables II", codigo: "ERG08", tipo: "Materia", año: 4, periodo: "2do Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ERG18"] },
+
+  // Quinto Año – Cuatrimestre 9
+  { actividad: "Producción, Transporte y Distribución de Combustibles", codigo: "ERG04", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: ["ERG19"] },
+  { actividad: "Energías Renovables III", codigo: "ERG22", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ERG08"] },
+  { actividad: "Gestión Técnica de Instalaciones", codigo: "ERG20", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ERG07"] },
+  { actividad: "Diseño de Sistemas Energéticos Integrados", codigo: "ERG21", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 4, totalHoras: 64, correlativas: ["ERG07"] },
+  { actividad: "Práctica Profesional Supervisada I", codigo: "PPS01", tipo: "Materia", año: 5, periodo: "1er Cuatrimestre", horasSem: 12.5, totalHoras: 200, correlativas: ["CMP01", "ERG19", "ERG20"] },
+
+  // Quinto Año – Cuatrimestre 10
+  { actividad: "Práctica Profesional Supervisada II", codigo: "PPS02", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 12.5, totalHoras: 200, correlativas: ["PPS01"] },
+  { actividad: "Electiva I", codigo: "ELECTIVA I", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+  { actividad: "Electiva II", codigo: "ELECTIVA II", tipo: "Materia", año: 5, periodo: "2do Cuatrimestre", horasSem: 8, totalHoras: 128, correlativas: [] },
+
+  // Sexto Año – Cuatrimestre 11
+  { actividad: "Proyecto Final Integrador (Diseño)", codigo: "PFIPD", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 15, totalHoras: 240, correlativas: ["CMP09", "ERG04", "ERG06", "ERG08"] },
+  { actividad: "Proyecto Final Integrador (Tesis)", codigo: "PFITE", tipo: "Materia", año: 6, periodo: "1er Cuatrimestre", horasSem: 15, totalHoras: 240, correlativas: ["PFIPD"] }
 ]
+
 };
       
 
