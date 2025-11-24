@@ -1,4 +1,6 @@
-// Botones del sidebar y enlaces
+// ===============================
+// BOTONES DEL SIDEBAR Y ENLACES
+// ===============================
 const btnSignIn = document.getElementById('btn-sign-in');
 const btnSignUp = document.getElementById('btn-sign-up');
 const form = document.getElementById('form');
@@ -7,14 +9,14 @@ const signin = document.getElementById('sign-in');
 const signup = document.getElementById('sign-up');
 const container = document.getElementById('container');
 
-// Botón para ir al perfil
+// Botón para ir al perfil (desde el formulario de registro)
 const btnRegistrarPerfil = document.getElementById('btn-registrar-perfil');
 
-// Enlaces de navegación
+// Enlaces de navegación (si existen)
 const LinkSignin = document.getElementById('link-sign-in');
 const LinkSignUp = document.getElementById('link-sign-up');
 
-// Campos del perfil (para mostrar en la misma vista)
+// Campos del perfil (para mostrar en alguna vista de perfil, si existen)
 const perfilNombre = document.getElementById('perfil-nombre');
 const perfilDni = document.getElementById('perfil-dni');
 const perfilEmail = document.getElementById('perfil-email');
@@ -30,40 +32,53 @@ const inputDniSignUp = document.getElementById('dni-signup');
 const inputEmailSignUp = document.getElementById('email-signup');
 const inputCarreraSignUp = document.getElementById('carrera-signup');
 
-// Inputs del perfil (lectura)
+// Inputs del perfil / login
 const inputNameSignIn = document.getElementById('name-signin');
 const inputDniSignIn = document.getElementById('dni-signin');
 const inputEmailSignIn = document.getElementById('email-signin');
 const inputCarreraSignIn = document.getElementById('carrera-signin');
 
-// Enlaces entre vistas
+// ===============================
+// ENLACES ENTRE VISTAS
+// ===============================
+
 if (LinkSignUp) {
   LinkSignUp.addEventListener('click', () => {
     changeSignin();
   });
 }
+
 if (LinkSignin) {
   LinkSignin.addEventListener('click', () => {
     changeSignup();
   });
 }
 
-btnSignIn.addEventListener('click', () => {
-  changeSignin();
-});
+if (btnSignIn) {
+  btnSignIn.addEventListener('click', () => {
+    changeSignin();
+  });
+}
 
-btnSignUp.addEventListener('click', () => {
-  changeSignup();
-});
+if (btnSignUp) {
+  btnSignUp.addEventListener('click', () => {
+    changeSignup();
+  });
+}
 
-btnRegistrarPerfil.addEventListener('click', () => {
-  changeSignup();
-});
+if (btnRegistrarPerfil) {
+  btnRegistrarPerfil.addEventListener('click', () => {
+    changeSignup();
+  });
+}
 
+// ===============================
+// ANIMACIONES
+// ===============================
 
-
-// Animaciones
 function changeSignin() {
+  if (!form || !sidebar || !container || !signin) return;
+
   form.classList.remove('active');
   sidebar.classList.remove('active');
   container.style.animation = 'none';
@@ -72,6 +87,8 @@ function changeSignin() {
 }
 
 function changeSignup() {
+  if (!form || !sidebar || !container || !signup) return;
+
   form.classList.add('active');
   sidebar.classList.add('active');
   container.style.animation = 'none';
@@ -94,100 +111,63 @@ function transition(parent) {
   }, 300);
 }
 
-// 🔁 Cuando se envía el formulario de REGISTRO
-formSignUp.addEventListener('submit', function (e) {
-  e.preventDefault();
+// ===============================
+// REGISTRO DE PERFIL (SIGN-UP)
+// ===============================
 
-  // Copiar a los inputs de perfil
-  inputNameSignIn.value = inputNameSignUp.value.trim();
-  inputDniSignIn.value = inputDniSignUp.value.trim();
-  inputEmailSignIn.value = inputEmailSignUp.value.trim();
-  inputCarreraSignIn.value = inputCarreraSignUp.value.trim();
-
-  // Mostrar en elementos visibles de perfil
-  perfilNombre.textContent = inputNameSignUp.value.trim();
-  perfilDni.textContent = inputDniSignUp.value.trim();
-  perfilEmail.textContent = inputEmailSignUp.value.trim();
-  perfilCarrera.textContent = inputCarreraSignUp.value.trim();
-
-  // Guardar perfil en localStorage
-  const userProfile = {
-    name: inputNameSignUp.value.trim(),
-    dni: inputDniSignUp.value.trim(),
-    email: inputEmailSignUp.value.trim(),
-    carrera: inputCarreraSignUp.value.trim()
-  };
-  localStorage.setItem('userProfile', JSON.stringify(userProfile));
-
-  // Redirigir a plan-de-estudio.html
-  window.location.href = 'Plan-estudios-carrera.html';
-});
-
-// 🧠 Código específico de plan-de-estudio.html
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Botones y formularios
-  const btnRegistrarPerfil = document.getElementById("btn-registrar-perfil");
-  const formSignUp = document.getElementById("sign-up");
-
-  const inputNameSignUp = document.getElementById("name-signup");
-  const inputDniSignUp = document.getElementById("dni-signup");
-  const inputEmailSignUp = document.getElementById("email-signup");
-  const inputCarreraSignUp = document.getElementById("carrera-signup");
-
-  // Registrar evento al botón de registrar
-  if (btnRegistrarPerfil && formSignUp) {
-  // No hace falta usar btnRegistrarPerfil aquí, porque el "submit" del formulario ya lo cubre
-
-  formSignUp.addEventListener("submit", function (e) {
+if (formSignUp) {
+  formSignUp.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Captura de datos del formulario de registro
-    const userProfile = {
-      name: inputNameSignUp.value.trim(),
-      dni: inputDniSignUp.value.trim(),
-      email: inputEmailSignUp.value.trim(),
-      carrera: inputCarreraSignUp.value.trim()
-    };
+    const nombre = (inputNameSignUp?.value || '').trim();
+    const dni = (inputDniSignUp?.value || '').trim();
+    const email = (inputEmailSignUp?.value || '').trim();
+    const carrera = (inputCarreraSignUp?.value || '').trim();
 
-    // Guardar en localStorage
-    localStorage.setItem("userProfile", JSON.stringify(userProfile));
+    // Copiar a los inputs de perfil / login
+    if (inputNameSignIn) inputNameSignIn.value = nombre;
+    if (inputDniSignIn) inputDniSignIn.value = dni;
+    if (inputEmailSignIn) inputEmailSignIn.value = email;
+    if (inputCarreraSignIn) inputCarreraSignIn.value = carrera;
 
-    // También copiar a los inputs de ingreso por si lo usás ahí
-    inputNameSignIn.value = userProfile.name;
-    inputDniSignIn.value = userProfile.dni;
-    inputEmailSignIn.value = userProfile.email;
-    inputCarreraSignIn.value = userProfile.carrera;
+    // Mostrar en elementos visibles de perfil (si existen)
+    if (perfilNombre) perfilNombre.textContent = nombre;
+    if (perfilDni) perfilDni.textContent = dni;
+    if (perfilEmail) perfilEmail.textContent = email;
+    if (perfilCarrera) perfilCarrera.textContent = carrera;
 
-    // Mostrar en la vista de perfil del index.html
-    perfilNombre.textContent = userProfile.name;
-    perfilDni.textContent = userProfile.dni;
-    perfilEmail.textContent = userProfile.email;
-    perfilCarrera.textContent = userProfile.carrera;
+    // Guardar perfil en localStorage
+    const userProfile = { name: nombre, dni, email, carrera };
+    localStorage.setItem('userProfile', JSON.stringify(userProfile));
 
-    // Cambiar de contenedor para mostrar la vista "perfil" (si tenés una función tipo changeSignup)
-    changeSignup();
+    // 👉 Flujo actual: ir directo al plan de estudios
+    //    (si querés pasar el DNI por querystring:)
+    // window.location.href = 'Plan-estudios-carrera.html?dni=' + encodeURIComponent(dni);
+    window.location.href = 'Plan-estudios-carrera.html';
   });
 }
 
+// ===============================
+// CARGA DE PERFIL (POR SI USÁS ESTE JS EN OTRAS PÁGINAS)
+// ===============================
 
-  // Mostrar datos del perfil en la segunda página
+document.addEventListener("DOMContentLoaded", () => {
   const profileJSON = localStorage.getItem("userProfile");
-  if (profileJSON) {
-    const { name, dni, email, carrera } = JSON.parse(profileJSON);
+  if (!profileJSON) return;
 
-    const perfilNombreDOM = document.getElementById("perfil-nombre");
-    const perfilDniDOM = document.getElementById("perfil-dni");
-    const perfilEmailDOM = document.getElementById("perfil-email");
-    const perfilCarreraDOM = document.getElementById("perfil-carrera");
+  const { name, dni, email, carrera } = JSON.parse(profileJSON);
 
-    if (perfilNombreDOM) perfilNombreDOM.textContent = name;
-    if (perfilDniDOM) perfilDniDOM.textContent = dni;
-    if (perfilEmailDOM) perfilEmailDOM.textContent = email;
-    if (perfilCarreraDOM) perfilCarreraDOM.textContent = carrera;
-  }
-  
-   // 🔒 Botón Cerrar sesión
+  const perfilNombreDOM = document.getElementById("perfil-nombre");
+  const perfilDniDOM = document.getElementById("perfil-dni");
+  const perfilEmailDOM = document.getElementById("perfil-email");
+  const perfilCarreraDOM = document.getElementById("perfil-carrera");
+
+  if (perfilNombreDOM) perfilNombreDOM.textContent = name;
+  if (perfilDniDOM) perfilDniDOM.textContent = dni;
+  if (perfilEmailDOM) perfilEmailDOM.textContent = email;
+  if (perfilCarreraDOM) perfilCarreraDOM.textContent = carrera;
+
+  // Botón Cerrar sesión (solo si existe en esa página)
   const btnLogout = document.getElementById("btn-logout");
   if (btnLogout) {
     btnLogout.addEventListener("click", () => {

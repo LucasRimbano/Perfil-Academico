@@ -9,153 +9,19 @@
   <!-- Enlace a CSS externo -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="images/favicon.ico" />
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script>
+  emailjs.init({
+    publicKey: "Dryij0S4NzIUCpDbM",
+  });
+</script>
 
-  <!-- Estilos internos -->
-  <style>
-    /* --- Estilo general del body --- */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
-      background-image: url('images/plano.jpg'); 
-       background-repeat: no-repeat;
-      background-size: cover;  
-      background-position: center -50px;  /* Centra la imagen */
-    }
 
-    /* --- Contenedor de perfil --- */
-    .profile-container {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgb(0, 217, 255);
-      width: 100%;
-      max-width: 400px;
-      margin: auto;
-      text-align: center;
-    }
-
-    /* --- Estilo del logo UNSAM --- */
-    .profile-container img.logo {
-      width: 80px;
-      margin-bottom: 1rem;
-    }
-
-    /* --- Título perfil --- */
-    .profile-container h1 {
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-      color: #333;
-    }
-
-    /* --- Información del perfil (Nombre, DNI, etc) --- */
-    .profile-info {
-      text-align: left;
-      margin-bottom: 1rem;
-    }
-    .profile-info label {
-      font-weight: bold;
-      display: inline-block;
-      width: 130px;
-    }
-    .profile-info span {
-      color: #555;
-    }
-
-    /* --- Botones guardar y logout --- */
-    #btn-logout, #guardar-tabla {
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      background: #0078d4;
-      color: #fff;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.2s;
-      margin-right: 10px;
-    }
-    #btn-logout:hover, #guardar-tabla:hover {
-      background: #005a9e;
-    }
-
-    /* --- Contenedor principal de plan de estudios y notas --- */
-    .plan-container {
-      margin-top: -30px;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      max-width: 90vw;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* --- Paneles laterales (tabla y carga de notas) --- */
-    .panel-inferior, .right-panel {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      width: 100%;
-      max-width: 850px;
-      max-height: 500px;
-      overflow: auto;
-      box-shadow: 0 0 10px rgb(0, 217, 255);
-    }
-
-    /* --- Scroll personalizado para panel inferior --- */
-    .panel-inferior::-webkit-scrollbar {
-      width: 8px;
-    }
-    .panel-inferior::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-    .panel-inferior::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 10px;
-    }
-    .panel-inferior::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-    .imgipiepag {
-      z-index: -1;
-    }
-    /* --- Estilo general de tablas --- */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-      table-layout: fixed;
-    }
-
-    th, td {
-      padding: 8px;
-      border: 1px solid #ccc;
-      text-align: center;
-    }
-
-    th {
-      background-color: #e6f0ff;
-    }
-
-    /* --- Inputs y selects dentro de celdas --- */
-    td input[type="text"], td select {
-      width: 100%;
-      padding: 4px;
-      text-align: center;
-    }
-
-    /* --- Responsividad para pantallas chicas --- */
-    @media (max-width: 768px) {
-      .panel-inferior, .right-panel {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
-<body>
+<body class="plan-body">
 
   <!-- Perfil Académico del usuario -->
   <div class="profile-container">
@@ -171,6 +37,8 @@
     <!-- Botones para cerrar sesión y guardar la tabla -->
     <button id="btn-logout">Cerrar sesión</button>
     <button id="guardar-tabla">Guardar Cambios</button>
+    <button id="enviar-perfil">Enviar Perfil Académico</button>
+
   </div>
 
   <!-- Plan de Estudios + Panel de Notas -->
@@ -203,19 +71,27 @@
   </div>
 
   <!-- Scripts para lógica dinámica -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Obtener datos del usuario desde localStorage
-      const profileJSON = localStorage.getItem('userProfile');
-      if (!profileJSON) return;
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // ================== 1) PERFIL DESDE localStorage ==================
+  const profileJSON = localStorage.getItem('userProfile');
+  if (!profileJSON) {
+    alert("No hay usuario registrado. Volviendo al inicio.");
+    window.location.href = 'index.html';
+    return;
+  }
 
-      const { name, dni, email, carrera } = JSON.parse(profileJSON);
+  const { name, dni, email, carrera } = JSON.parse(profileJSON);
 
-      // Mostrar datos en el DOM
-      document.getElementById('perfil-nombre').textContent = name;
-      document.getElementById('perfil-dni').textContent = dni;
-      document.getElementById('perfil-email').textContent = email;
-      document.getElementById('perfil-carrera').textContent = carrera;
+  const perfilNombreDOM  = document.getElementById('perfil-nombre');
+  const perfilDniDOM     = document.getElementById('perfil-dni');
+  const perfilEmailDOM   = document.getElementById('perfil-email');
+  const perfilCarreraDOM = document.getElementById('perfil-carrera');
+
+  if (perfilNombreDOM)  perfilNombreDOM.textContent  = name;
+  if (perfilDniDOM)     perfilDniDOM.textContent     = dni;
+  if (perfilEmailDOM)   perfilEmailDOM.textContent   = email;
+  if (perfilCarreraDOM) perfilCarreraDOM.textContent = carrera;
 
       // Materias según carrera (diccionario)
       const materiasPorCarrera = {
@@ -745,84 +621,156 @@
 
 };
       
+// ================== 3) ARMAR TABLA DINÁMICA ==================
+  const materias = materiasPorCarrera[carrera] || [];
+  const tbody = document.querySelector('#editable-table tbody');
+  const keyTabla = `tablaData_${dni}`;
+  const tablaGuardada = JSON.parse(localStorage.getItem(keyTabla) || '[]');
 
-      // Cargar materias
-      const materias = materiasPorCarrera[carrera] || [];
-      const tbody = document.querySelector("#editable-table tbody");
-      const key = `tablaData_${dni}`;
-      const tablaGuardada = JSON.parse(localStorage.getItem(key)) || [];
+  if (tbody) {
+    if (materias.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="7">No se encontraron materias para la carrera: ${carrera || "No definida"}</td></tr>`;
+    } else {
+      tbody.innerHTML = '';
+      materias.forEach((materia, index) => {
+        const dataGuardada = tablaGuardada[index] || {};
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${materia.actividad}</td>
+          <td>${materia.tipo}</td>
+          <td>${materia.año}</td>
+          <td>${materia.periodo}</td>
+          <td><input type="text" name="nota" value="${dataGuardada.nota || ''}"></td>
+          <td>
+            <select name="origen">
+              <option value="" ${!dataGuardada.origen ? 'selected' : ''}></option>
+              <option value="Regularidad" ${dataGuardada.origen === 'Regularidad' ? 'selected' : ''}>Regularidad</option>
+              <option value="Promoción" ${dataGuardada.origen === 'Promoción' ? 'selected' : ''}>Promoción</option>
+            </select>
+          </td>
+          <td>
+            <select name="correlativas">
+              <option value="" ${!dataGuardada.correlativa ? 'selected' : ''}></option>
+              <option value="Sí" ${dataGuardada.correlativa === 'Sí' ? 'selected' : ''}>Sí</option>
+              <option value="No" ${dataGuardada.correlativa === 'No' ? 'selected' : ''}>No</option>
+            </select>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+  }
 
-      if (materias.length === 0) {
-        // Si no hay materias definidas para esa carrera
-        tbody.innerHTML = `<tr><td colspan="7">No se encontraron materias para la carrera: ${carrera || "No definida"}</td></tr>`;
-      } else {
-        tbody.innerHTML = ""; // Limpiar tabla antes de llenar
+  // ================== 4) BOTONES: GUARDAR, ENVIAR, LOGOUT ==================
+  const btnGuardar      = document.getElementById('guardar-tabla');
+  const btnEnviarPerfil = document.getElementById('enviar-perfil');
+  const btnLogout       = document.getElementById('btn-logout');
 
-        materias.forEach((materia, index) => {
-          const dataGuardada = tablaGuardada[index] || {};
-          const row = document.createElement("tr");
-          row.innerHTML = `
-            <td>${materia.actividad}</td>
-            <td>${materia.tipo}</td>
-            <td>${materia.año}</td>
-            <td>${materia.periodo}</td>
-            <td><input type="text" name="nota" value="${dataGuardada.nota || ''}"></td>
-            <td>
-              <select name="origen">
-                <option value="" ${!dataGuardada.origen ? 'selected' : ''}></option>
-                <option value="Regularidad" ${dataGuardada.origen === 'Regularidad' ? 'selected' : ''}>Regularidad</option>
-                <option value="Promoción" ${dataGuardada.origen === 'Promoción' ? 'selected' : ''}>Promoción</option>
-              </select>
-            </td>
-            <td>
-              <select name="correlativas">
-                <option value="" ${!dataGuardada.correlativa ? 'selected' : ''}></option>
-                <option value="Sí" ${dataGuardada.correlativa === 'Sí' ? 'selected' : ''}>Sí</option>
-                <option value="No" ${dataGuardada.correlativa === 'No' ? 'selected' : ''}>No</option>
-              </select>
-            </td>
-          `;
-          tbody.appendChild(row);
-        });
-      }
-    });
+  // --- GUARDAR + ENVIAR MAIL ---
+  if (btnGuardar) {
+    btnGuardar.addEventListener('click', async () => {
 
-    // Botón guardar tabla (guarda datos en localStorage por DNI)
-    document.getElementById('guardar-tabla')?.addEventListener('click', () => {
-      const profileJSON = localStorage.getItem('userProfile');
-      if (!profileJSON) {
-        alert("No hay usuario registrado.");
-        return;
-      }
-
-      const { dni } = JSON.parse(profileJSON);
-      const key = `tablaData_${dni}`;
+      // 4.1 Guardar tabla en localStorage
       const rows = document.querySelectorAll('#editable-table tbody tr');
       const tablaData = [];
+      let tablaHTML = `
+        <table border="1" style="border-collapse: collapse; width: 100%;">
+          <thead>
+            <tr>
+              <th>Actividad</th>
+              <th>Tipo</th>
+              <th>Año</th>
+              <th>Periodo</th>
+              <th>Nota</th>
+              <th>Origen</th>
+              <th>Correlativas</th>
+            </tr>
+          </thead>
+          <tbody>`;
 
       rows.forEach(row => {
         const cells = row.querySelectorAll('td');
+        const nota = cells[4].querySelector('input')?.value || '';
+        const origen = cells[5].querySelector('select')?.value || '';
+        const correlativas = cells[6].querySelector('select')?.value || '';
+
         tablaData.push({
-          actividad: cells[0].textContent,
-          tipo: cells[1].textContent,
-          año: cells[2].textContent,
-          periodo: cells[3].textContent,
-          nota: cells[4].querySelector('input')?.value || '',
-          origen: cells[5].querySelector('select')?.value || '',
-          correlativa: cells[6].querySelector('select')?.value || ''
+          actividad:  cells[0].textContent.trim(),
+          tipo:       cells[1].textContent.trim(),
+          año:        cells[2].textContent.trim(),
+          periodo:    cells[3].textContent.trim(),
+          nota:       nota,
+          origen:     origen,
+          correlativa: correlativas
         });
+
+        tablaHTML += `
+          <tr>
+            <td>${cells[0].textContent.trim()}</td>
+            <td>${cells[1].textContent.trim()}</td>
+            <td>${cells[2].textContent.trim()}</td>
+            <td>${cells[3].textContent.trim()}</td>
+            <td>${nota.trim()}</td>
+            <td>${origen.trim()}</td>
+            <td>${correlativas.trim()}</td>
+          </tr>`;
       });
 
-      localStorage.setItem(key, JSON.stringify(tablaData));
-      alert("¡Datos guardados correctamente!");
-    });
+      tablaHTML += `</tbody></table>`;
 
-    // Botón cerrar sesión (borra perfil y redirige)
-    document.getElementById('btn-logout')?.addEventListener('click', () => {
+      localStorage.setItem(keyTabla, JSON.stringify(tablaData));
+      alert("✅ Datos guardados correctamente. Enviando mail...");
+
+      // 4.2 Armar y validar email destino
+      let emailSanitizado = (email || '').trim().toLowerCase().replace(/\s/g, '');
+      console.log('EmailSanitizado que se envía:', emailSanitizado);
+      const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!regexEmail.test(emailSanitizado)) {
+        alert("⚠️ El email del perfil no es válido: " + emailSanitizado);
+        return;
+      }
+
+      // 4.3 Enviar con EmailJS
+      try {
+        const response = await emailjs.send(
+          "service_312a9vc",     // Service ID
+          "template_yo4de04",    // Template ID
+          {
+            user_name:   name,
+            user_dni:    dni,
+            user_email:  emailSanitizado,
+            user_carrera: carrera,
+            user_plan:   tablaHTML
+          }
+        );
+        console.log("EmailJS response:", response);
+        alert("📧 Perfil académico enviado a tu correo.");
+      } catch (error) {
+        console.error("EmailJS error:", error);
+        alert("❌ Error al enviar el mail. Revisá la consola (F12).");
+      }
+    });
+  }
+
+  // --- ENVIAR PERFIL (usa lo mismo que GUARDAR) ---
+  if (btnEnviarPerfil && btnGuardar) {
+    btnEnviarPerfil.addEventListener('click', () => {
+      btnGuardar.click();
+    });
+  }
+
+  // --- CERRAR SESIÓN ---
+  if (btnLogout) {
+    btnLogout.addEventListener('click', () => {
       localStorage.removeItem('userProfile');
       window.location.href = 'index.html';
     });
-  </script>
+  }
+});
+</script>
+
+
 
   <!-- Pie de página -->
   <div>

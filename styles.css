@@ -369,3 +369,474 @@ form .btn-register {
     40% {transform: translateY(2px);}
     60% {transform: translateY(0);}
 }
+
+
+/* ============================================
+   ESTILOS ESPECÍFICOS: PLAN DE ESTUDIOS
+   (Plan-estudios-carrera.html)
+   ============================================ */
+
+/* Body sólo para la página de plan de estudios */
+.plan-body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    /* Podés usar mismo fondo que index o este plano */
+    background-image: url('images/plano.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center -50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor del perfil arriba */
+.profile-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.8rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 12px rgba(0, 225, 255, 0.7);
+    width: 100%;
+    max-width: 450px;
+    margin: 1rem auto 1.5rem auto;
+    text-align: center;
+    backdrop-filter: blur(3px);
+}
+
+.profile-container img.logo {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+.profile-container h1 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Info del perfil (Nombre, DNI, etc.) */
+.profile-info {
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.profile-info label {
+    font-weight: 700;
+    display: inline-block;
+    width: 140px;
+    font-size: 0.9rem;
+}
+
+.profile-info span {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Botones de perfil */
+#btn-logout,
+#guardar-tabla,
+#enviar-perfil {
+    margin-top: 0.8rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+    margin-right: 0.4rem;
+    font-size: 0.85rem;
+}
+
+#btn-logout {
+    background: #ff4c4c;
+}
+
+#btn-logout:hover {
+    background: #d63838;
+}
+
+#guardar-tabla:hover,
+#enviar-perfil:hover {
+    background: #00b6d1;
+    box-shadow: 0 0 10px rgba(0, 225, 255, 0.8);
+    transform: translateY(-1px);
+}
+
+/* Contenedor general del plan (tabla) */
+.plan-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 4rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Panel con la tabla */
+.panel-inferior {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    width: 100%;
+    max-height: 520px;
+    overflow: auto;
+    box-shadow: 0 0 12px rgba(0, 225, 255, 0.7);
+}
+
+/* Scroll lindo para el panel */
+.panel-inferior::-webkit-scrollbar {
+    width: 8px;
+}
+.panel-inferior::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.panel-inferior::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 10px;
+}
+.panel-inferior::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* Título de la tabla */
+.panel-inferior h2 {
+    margin-bottom: 1rem;
+    text-align: left;
+    color: #222;
+}
+
+/* Tablas dentro de plan de estudios */
+.plan-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    table-layout: fixed;
+}
+
+.plan-body th,
+.plan-body td {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.plan-body th {
+    background-color: #e6f0ff;
+    font-weight: 700;
+}
+
+/* Inputs y selects dentro de la tabla */
+.plan-body td input[type="text"],
+.plan-body td select {
+    width: 100%;
+    padding: 3px 4px;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--color-border);
+    outline: none;
+    text-align: center;
+}
+
+.plan-body td input[type="text"]:focus,
+.plan-body td select:focus {
+    border-color: var(--color-secondary);
+}
+
+/* Responsivo para pantallas chicas */
+@media (max-width: 768px) {
+    .profile-container {
+        max-width: 95%;
+        padding: 1.2rem;
+    }
+    .plan-container {
+        max-width: 95%;
+    }
+    .panel-inferior {
+        padding: 1rem;
+    }
+}
+/* ===================================================== */
+/*  OVERWRITE DEL BODY SOLO PARA PLAN DE ESTUDIOS       */
+/*  (anula el body global que tiene display:flex y 100vh)*/
+/* ===================================================== */
+
+body.plan-body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    background-image: url('images/plano.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center -50px;
+
+    /* anulamos lo del body global */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;            /* IMPORTANTE: quita el 100vh fijo */
+}
+
+/* Layout desktop: perfil a la izquierda, tabla a la derecha */
+.plan-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 4rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Panel con la tabla: lo dejamos como lo tenías */
+.panel-inferior {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    width: 100%;
+    max-height: 520px;
+    overflow: auto;
+    box-shadow: 0 0 12px rgba(0, 225, 255, 0.7);
+}
+
+/* =========================
+   RESPONSIVE 1250px PARA ABAJO
+   → columnas, tabla arriba y perfil abajo
+   ========================= */
+@media (max-width: 1250px) {
+    .plan-container {
+        flex-direction: column-reverse;  /* tabla primero, perfil abajo */
+        align-items: center;
+        max-width: 95%;
+        margin-bottom: 80px;             /* espacio para no pisar el footer */
+    }
+
+    .panel-inferior,
+    .profile-container {
+        max-width: 100%;
+    }
+
+    .profile-container {
+        margin-top: 1.5rem;
+    }
+}
+
+/* Extra ajuste para celulares chicos */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 1.2rem;
+    }
+    .panel-inferior {
+        padding: 1rem;
+    }
+}
+/* ============================================
+   ESTILOS ESPECÍFICOS: PLAN DE ESTUDIOS
+   (Plan-estudios-carrera.html)
+   ============================================ */
+
+/* Body solo para la página de plan */
+body.plan-body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    height: auto; /* anula el height:100vh del body global */
+    font-family: "Montserrat", sans-serif;
+
+    background-image: url('images/plano.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center -50px;
+
+    /* Layout desktop: perfil + tabla lado a lado */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* --------- PERFIL (desktop: izquierda) --------- */
+body.plan-body .profile-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.8rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 12px rgba(0, 225, 255, 0.7);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    backdrop-filter: blur(3px);
+}
+
+body.plan-body .profile-container img.logo {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+body.plan-body .profile-container h1 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Info del perfil */
+body.plan-body .profile-info {
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+body.plan-body .profile-info label {
+    font-weight: 700;
+    display: inline-block;
+    width: 140px;
+    font-size: 0.9rem;
+}
+body.plan-body .profile-info span {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Botones del perfil */
+body.plan-body #btn-logout,
+body.plan-body #guardar-tabla,
+body.plan-body #enviar-perfil {
+    margin-top: 0.8rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+    margin-right: 0.4rem;
+    font-size: 0.85rem;
+}
+
+body.plan-body #btn-logout {
+    background: #ff4c4c;
+}
+body.plan-body #btn-logout:hover {
+    background: #d63838;
+}
+body.plan-body #guardar-tabla:hover,
+body.plan-body #enviar-perfil:hover {
+    background: #00b6d1;
+    box-shadow: 0 0 10px rgba(0, 225, 255, 0.8);
+    transform: translateY(-1px);
+}
+
+/* --------- PLAN DE ESTUDIOS (desktop: derecha) --------- */
+
+body.plan-body .plan-container {
+    width: 100%;
+    max-width: 1100px;
+}
+
+body.plan-body .panel-inferior {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    width: 100%;
+    max-height: 520px;
+    overflow: auto;
+    box-shadow: 0 0 12px rgba(0, 225, 255, 0.7);
+}
+
+/* Scroll lindo */
+body.plan-body .panel-inferior::-webkit-scrollbar {
+    width: 8px;
+}
+body.plan-body .panel-inferior::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+body.plan-body .panel-inferior::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 10px;
+}
+body.plan-body .panel-inferior::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* Tablas */
+body.plan-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    table-layout: fixed;
+}
+body.plan-body th,
+body.plan-body td {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+    word-wrap: break-word;
+}
+body.plan-body th {
+    background-color: #e6f0ff;
+    font-weight: 700;
+}
+
+/* Inputs y selects dentro de la tabla */
+body.plan-body td input[type="text"],
+body.plan-body td select {
+    width: 100%;
+    padding: 3px 4px;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--color-border);
+    outline: none;
+    text-align: center;
+}
+body.plan-body td input[type="text"]:focus,
+body.plan-body td select:focus {
+    border-color: var(--color-secondary);
+}
+
+/* ============================================
+   RESPONSIVE: ≤1250px → columna
+   (tabla arriba, perfil abajo)
+   ============================================ */
+@media (max-width: 1250px) {
+    body.plan-body {
+        flex-direction: column;      /* en columna */
+        align-items: center;
+        padding: 15px;
+        padding-bottom: 80px;        /* espacio para footer fijo */
+    }
+
+    /* Orden: primero tabla (plan), después perfil */
+    body.plan-body .plan-container {
+        order: 1;
+        max-width: 95%;
+    }
+
+    body.plan-body .profile-container {
+        order: 2;
+        max-width: 95%;
+        margin-top: 1.2rem;
+    }
+
+    body.plan-body .panel-inferior {
+        max-height: none;
+        padding: 1rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE: ≤768px → ajuste para celu
+   ============================================ */
+@media (max-width: 768px) {
+    body.plan-body .profile-container {
+        padding: 1.2rem;
+    }
+    body.plan-body .panel-inferior {
+        padding: 0.8rem;
+    }
+}
