@@ -83,6 +83,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const { name, dni, email, carrera } = JSON.parse(profileJSON);
 
+    // ===== Funciones para promedio de notas y mejor materia =====
+  function actualizarPromedio() {
+    const inputsNotas = document.querySelectorAll('#editable-table tbody input[name="nota"]');
+    let suma = 0;
+    let count = 0;
+
+    let mejorNota = -1;
+    let mejorMateria = '';
+
+    inputsNotas.forEach(input => {
+      let valor = (input.value || '').trim().replace(',', '.');
+      if (valor !== '') {
+        const num = parseFloat(valor);
+        if (!isNaN(num) && num >= 1 && num <= 10) {
+          // Para el promedio
+          suma += num;
+          count++;
+
+          // Para la mejor materia
+          if (num > mejorNota) {
+            mejorNota = num;
+
+            // Buscar el nombre de la materia en la misma fila
+            const row = input.closest('tr');
+            const celdaActividad = row?.querySelector('td:nth-child(1)');
+            mejorMateria = celdaActividad ? celdaActividad.textContent.trim() : '';
+          }
+        }
+      }
+    });
+
+    const spanPromedio = document.getElementById('promedio-notas');
+    const spanMejorMateria = document.getElementById('mejor-materia');
+    const spanMejorNota = document.getElementById('mejor-nota');
+
+    if (spanPromedio) {
+      if (count === 0) {
+        spanPromedio.textContent = '-';
+      } else {
+        spanPromedio.textContent = (suma / count).toFixed(2);
+      }
+    }
+
+    if (spanMejorMateria && spanMejorNota) {
+      if (mejorNota === -1) {
+        spanMejorMateria.textContent = '-';
+        spanMejorNota.textContent = '-';
+      } else {
+        spanMejorMateria.textContent = mejorMateria;
+        spanMejorNota.textContent = mejorNota.toFixed(2);
+      }
+    }
+  }
+
+  function agregarListenersNotas() {
+    const inputsNotas = document.querySelectorAll('#editable-table tbody input[name="nota"]');
+    inputsNotas.forEach(input => {
+      input.addEventListener('input', actualizarPromedio);
+    });
+  }
+
+
+   
   const perfilNombreDOM  = document.getElementById('perfil-nombre');
   const perfilDniDOM     = document.getElementById('perfil-dni');
   const perfilEmailDOM   = document.getElementById('perfil-email');
@@ -635,6 +698,10 @@ document.addEventListener('DOMContentLoaded', () => {
       materias.forEach((materia, index) => {
         const dataGuardada = tablaGuardada[index] || {};
         const row = document.createElement('tr');
+              // Después de crear todas las filas
+      agregarListenersNotas();
+      actualizarPromedio();
+
         row.innerHTML = `
           <td>${materia.actividad}</td>
           <td>${materia.tipo}</td>
@@ -770,6 +837,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+  <!-- Resumen de notas -->
+  <div class="resumen-notas-container">
+    <h2>Resumen de Notas</h2>
+    <p>
+      Promedio general (1 a 10):
+      <span id="promedio-notas">-</span>
+    </p>
+    <p>
+    Mejor materia:
+    <span id="mejor-materia">-</span>
+    (Nota: <span id="mejor-nota">-</span>)
+  </p>
+  </div>
 
 
   <!-- Pie de página -->

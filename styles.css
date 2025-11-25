@@ -840,3 +840,38 @@ body.plan-body td select:focus {
         padding: 0.8rem;
     }
 }
+
+.resumen-notas-container {
+  max-width: 900px;
+  margin: 20px auto 40px auto;
+  padding: 15px 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  font-weight: 600;
+}
+
+.resumen-notas-container h2 {
+  margin-bottom: 8px;
+}
+
+.resumen-notas-container #promedio-notas {
+  font-size: 1.4rem;
+}
+.resumen-notas-container {
+  max-width: 900px;
+  margin: 20px auto 40px auto;
+  padding: 15px 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  font-weight: 600;
+}
+
+.resumen-notas-container h2 {
+  margin-bottom: 8px;
+}
+
+.resumen-notas-container #promedio-notas {
+  font-size: 1.4rem;
+}
