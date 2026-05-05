@@ -1,6 +1,6 @@
-// ===============================
-// BOTONES DEL SIDEBAR Y ENLACES
-// ===============================
+
+
+
 const btnSignIn = document.getElementById('btn-sign-in');
 const btnSignUp = document.getElementById('btn-sign-up');
 const form = document.getElementById('form');
@@ -38,9 +38,9 @@ const inputDniSignIn = document.getElementById('dni-signin');
 const inputEmailSignIn = document.getElementById('email-signin');
 const inputCarreraSignIn = document.getElementById('carrera-signin');
 
-// ===============================
+
 // ENLACES ENTRE VISTAS
-// ===============================
+
 
 if (LinkSignUp) {
   LinkSignUp.addEventListener('click', () => {
@@ -72,10 +72,8 @@ if (btnRegistrarPerfil) {
   });
 }
 
-// ===============================
-// ANIMACIONES
-// ===============================
 
+// ANIMACIONES
 function changeSignin() {
   if (!form || !sidebar || !container || !signin) return;
 
@@ -111,9 +109,9 @@ function transition(parent) {
   }, 300);
 }
 
-// ===============================
+
 // REGISTRO DE PERFIL (SIGN-UP)
-// ===============================
+
 
 if (formSignUp) {
   formSignUp.addEventListener('submit', function (e) {
@@ -140,16 +138,15 @@ if (formSignUp) {
     const userProfile = { name: nombre, dni, email, carrera };
     localStorage.setItem('userProfile', JSON.stringify(userProfile));
 
-    // 👉 Flujo actual: ir directo al plan de estudios
-    //    (si querés pasar el DNI por querystring:)
-    // window.location.href = 'Plan-estudios-carrera.html?dni=' + encodeURIComponent(dni);
+    //  Flujo actual: ir directo al plan de estudios
+ 
     window.location.href = 'Plan-estudios-carrera.html';
   });
 }
 
-// ===============================
-// CARGA DE PERFIL (POR SI USÁS ESTE JS EN OTRAS PÁGINAS)
-// ===============================
+
+// CARGA DE PERFIL 
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const profileJSON = localStorage.getItem("userProfile");
@@ -167,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (perfilEmailDOM) perfilEmailDOM.textContent = email;
   if (perfilCarreraDOM) perfilCarreraDOM.textContent = carrera;
 
-  // Botón Cerrar sesión (solo si existe en esa página)
+  // Botón Cerrar sesión 
   const btnLogout = document.getElementById("btn-logout");
   if (btnLogout) {
     btnLogout.addEventListener("click", () => {
